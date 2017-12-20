@@ -18,8 +18,8 @@ class room(self,name,description,big_room):
     self.name = name
     self.description = description      ##string
     self.inventory = inventory          ##list[item (or) character]
-    self.connects_to = big_room         ##list[rooms]
     self.open_req = []
+    self.connects_to = connect_to       ##prompt user with connected rooms, hallway to all, all to hallway
 
           ##dict{item: text, item:text}
 
@@ -34,3 +34,5 @@ class room(self,name,description,big_room):
 
     def move_to(self):
         self.move_count = self.move_distance + 1
+
+        ##Prompt:
