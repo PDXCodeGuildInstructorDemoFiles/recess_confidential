@@ -26,7 +26,7 @@ class Item:
 ##blackjack
 ##trivia
 
-hairpin = Item("candy bar","This is one really yummy looking candy bar",True,True,"I found a suspicious hairpin",2)
+hairpin = Item("Hair pin","This is one really yummy looking candy bar",True,True,"I found a suspicious hairpin",2)
 pet_food = Item("pet food","This is some gerbil food",False,True,"Found some gerbil food",2)
 student_list = Item("allergy list","These students are allergic to gerbils:<list_students>",True,True,"Some students are allergic.",2)
 sick_student = Item("sick student","This is one really yummy looking candy bar",True,True,"A student was sick",2)
