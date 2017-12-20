@@ -3,21 +3,32 @@ class Character:
         self.name = name
         self.description = description
         self.guilt = guilt
-        self.inventory = Inventory()
 
 
 class NPC(Character):
-    def __init__(self, name, description, stats_list, guilt=False):
+    def __init__(self, name, description, guilt=False):
         Character.__init__(self, name, description, guilt)
-        self.stats = stats_list
+        self.talk = self.get_dialogue()
 
+    def get_dialogue(self):
+        pass
 
 class Player(Character):
     def __init__(self, name, description, guilt=False):
         Character.__init__(self, name, description, guilt)
-        self.stats = self.get_stats()
+        self.notebook = Notebook()
+        self.inventory = []
 
-    def get_stats(self):
+    def move(self, current_room, new_room):
+        pass
+
+    def start_dialogue(self):
+        pass
+
+    def examine_object(self, object):
+        pass
+
+    def store_object(self, object):
         pass
 
 
