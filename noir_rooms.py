@@ -11,6 +11,8 @@ start_point = "classroom"
 classroom = room(classroom,"There is an empty classroom with a chalkboard and desks.", None)
 teacherdesk = room(teacherdesk,"There is a teacher's desk by the chalkboard", classroom)
 
+json reader
+
 
 class room(self,name,description,big_room):
     self.name = name
@@ -24,6 +26,11 @@ class room(self,name,description,big_room):
     # self.move_distance = move_distance  ##integer
     # self.trigger = trigger              ##string
 
+    def __str__(self):
+        return self.name
+
+    def __repr__(self):
+        return self.name
 
     def move_to(self):
         self.move_count = self.move_distance + 1
