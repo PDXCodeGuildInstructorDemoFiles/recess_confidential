@@ -17,7 +17,7 @@ class Player(Character):
     def __init__(self, name, description, guilt=False):
         Character.__init__(self, name, description, guilt)
         self.notebook = Notebook()
-        self.inventory = []
+        self.keycard = False
 
     def move(self, current_room, new_room):
         pass
