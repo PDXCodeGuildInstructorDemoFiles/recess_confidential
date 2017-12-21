@@ -3,6 +3,13 @@ class Character:
         self.name = name
         self.description = description
 
+    def __str__(self):
+        return self.name
+
+    def __repr__(self):
+        return self.name
+
+
 
 class NpcEssential(Character):
     def __init__(self, name, description, interactions, mini_game = None, inventory=[]):
