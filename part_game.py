@@ -129,15 +129,18 @@ if __name__ == '__main__':
     play_music()
     back_to_room = []
 
-
+    # runs game
     while game == True:
         os.system('cls' if os.name == 'nt' else 'clear')
         game_start()
+
+        # start or quit select
         user = input("Would you like to:\n" \
                                     "(S)tart a game\n" \
                                     "(Q)uit the game\n" \
                                      ).lower()
 
+        # begins game
         if user == 's':
             os.system('cls' if os.name == 'nt' else 'clear')
             start = True
@@ -146,10 +149,12 @@ if __name__ == '__main__':
             print("Your are in the hallway. \nYou hear a scream and a bloody head rolls out of a classroom. \n")
             input("\n\n\n[Press any key]")
 
+            # loop for continued action select
             while start == True:
                 os.system('cls' if os.name == 'nt' else 'clear')
                 print("")
                 menu()
 
+        # quits the game
         elif user == 'q':
             quit()
