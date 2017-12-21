@@ -4,12 +4,13 @@ import random
 
 def trivia_game():
     
-    with open('trivia_json/science_formatted.json', 'r') as f:
+    with open('trivia_json/film_formatted.json', 'r') as f:
         data = json.loads(f.read())
         questions = []
         
         for ask in range(10):
-            questions.append(random.choice(data))
+            secure_random = random.SystemRandom()
+            questions.append(secure_random.choice(data))
 
     score = 0
     for ask in questions:

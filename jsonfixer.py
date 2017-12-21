@@ -1,7 +1,7 @@
 import json
 import random
 
-with open('trivia_json/science.json', 'r+') as f:
+with open('trivia_json/film.json', 'r+') as f:
     data = json.loads(f.read())
 
 new_dict_list = []
@@ -17,5 +17,5 @@ for i in data['results']:
         'options': options
     })
     
-with open('trivia_json/science_formatted.json', 'w') as wf:
+with open('trivia_json/film_formatted.json', 'w') as wf:
     wf.write(json.dumps(new_dict_list))
