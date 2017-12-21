@@ -5,10 +5,10 @@ class Character:
 
 
 class NpcEssential(Character):
-    def __init__(self, name, description, interactions, mini_game = None, inventory=[]):
+    def __init__(self, name, description, interactions, mini_game=None):
         Character.__init__(self, name, description)
         self.interactions = interactions
-        self.inventory = inventory
+        self.inventory = []
         self.mini_game = mini_game
 
     def talk(self):
@@ -21,7 +21,7 @@ class NpcEssential(Character):
             print("Better luck next time!")
 
     def give(self):
-        for item in self.inventory:
+        return self.inventory.pop()
 
 
 class NpcNonEssential(Character):
@@ -37,7 +37,7 @@ class Player(Character):
     def __init__(self, name, description):
         Character.__init__(self, name, description)
         self.notebook = Notebook()
-        self.keycard = False
+        self.keycard = self.check_keycard()
         self.current_loc = hallway[-1]
         self.prev_loc = None
 
@@ -49,6 +49,11 @@ class Player(Character):
 
     def log_clue(self, clue):
         self.notebook.write(clue)
+
+    def check_keycard(self):
+        if keycard in self.notebook:
+            return True
+        return False
 
 
 if __name__ == '__main__':

@@ -1,7 +1,7 @@
 
 
 class Item:
-    def __init__(self, name, description,visible,mutable,notebook,points):
+    def __init__(self, name, description, visible, mutable, notebook, points):
         self.name = name
         self.description = description      ##string
         self.visible = visible              ##boolean
