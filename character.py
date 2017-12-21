@@ -6,12 +6,19 @@ class Character:
 
 
 class NPC(Character):
-    def __init__(self, name, description, guilt=False):
+    def __init__(self, name, description, interactions, guilt=False):
         Character.__init__(self, name, description, guilt)
-        self.talk = self.get_dialogue()
+        self.interactions = interactions
 
-    def get_dialogue(self):
-        pass
+    def talk(self):
+        return self.interactions[self.name]['game_offer']
+
+    def conclude(self, outcome):
+        if outcome:
+            print(self.interactions[self.name]['conclusion'])
+        else:
+            print("Better luck next time!")
+
 
 class Player(Character):
     def __init__(self, name, description, guilt=False):
@@ -20,9 +27,6 @@ class Player(Character):
         self.keycard = False
 
     def move(self, current_room, new_room):
-        pass
-
-    def start_dialogue(self):
         pass
 
     def examine_object(self, object):
