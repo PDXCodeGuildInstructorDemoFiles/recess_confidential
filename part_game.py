@@ -1,6 +1,7 @@
 # modules
 from noir_items import Item
 from noir_rooms import Room
+from character import Character, NPC, Player
 import csv
 import os
 import urllib
@@ -16,12 +17,22 @@ def log_data():
     with open('data.csv') as csvfile:
         readCSV = csv.reader(csvfile, delimiter=',')
         all_rooms = []
+        all_items = []
 
         for column in readCSV:
             try:
+                # imports items
+                if column[0] == 'item':
+                    temp_item = Item(column[1], column[2], boolean_check(column[3]), boolean_check(column[4]), column[5],int(column[6]))
+                    items.append(temp_item)
+                    all_items.append(temp_item)
                 # imports small rooms first
-                if column[0] == 'small_room':
-                    all_rooms.append(Room(column[1],column[2],column[3]))
+                elif column[0] == 'small_room':
+                    temp_room = Room(column[1],column[2],column[3])
+                    for i in range(len(all_items)):
+                        temp_room.inventory.append(all_items[i])
+                    all_rooms.append(temp_room)
+                    all_items = []
                 # imports big room after and puts the small rooms in the big room
                 elif column[0] == 'big_room':
                     big_room = Room(column[1], column[2],column[3])
@@ -30,10 +41,7 @@ def log_data():
                         big_room.add_room(i)
                     hallway.append(big_room)
                     all_rooms = []
-                # imports items
-                elif column[0] == 'item':
-                    temp_item = Item(column[1],column[2],boolean_check(column[3]),boolean_check(column[4]),column[5],int(column[6]))
-                    items.append(temp_item)
+
             except IndexError:
                 continue
 
@@ -119,7 +127,7 @@ def navigation():
         print("")
         print("\n[R]eturn to {})".format(back_to_room))
 
-        user = input("Which object do you want to look at?")
+        user = input("What would you like to do?")
 
         if user == 'r':
             charlocation = back_to_room
@@ -129,12 +137,28 @@ def navigation():
         else:
             user = int(user)
             back_to_room = charlocation
-            charlocation = charlocation.connects_to[user]
+            if find_class(charlocation.inventory[user]) == "Item":
+                print("Item was chosen")
+                p_note.write(charlocation.inventory[user])
+            elif find_class(charlocation.inventory[user]) == "NPC":
+                print("NPC was chosen")
+                print("<Insert NPC code commands here>")
+                if charlocation.inventory[user].essential
+                    if q == 'y':
+                        print('TRIVIA GAME')  # here we would run the mini-game module.
+                        reward = 1  # this would be returned by the mini-game
+                        charlocation.inventory[user].conclude(reward)  # prize or no prize
+                        player.notebook.write(charlocation.inventory[user].give())
+                    else:
+                        print('Ok, see you later.')  # chose not to play
+                else:
+                    print(charlocation.inventory[user].talk())
+            input("")
             navigation()
 
 # Function that returns the class of an object (i.e. room,item,character)
 def find_class(new_obj):
-    return (new_obj.__class__.__name__)
+    return new_obj.__class__.__name__
 
 # Menu Interface
 def menu():
@@ -153,11 +177,20 @@ def menu():
 if __name__ == '__main__':
     game = True
 
+    interactions = {
+        'Mrs. Frizzle': {'game_offer': 'Would you like to play trivia? ', 'conclusion': 'Ok, here\'s the key.'}}
+
+    science_teacher = NPC('Mrs. Frizzle', 'Frazzled', interactions)
+
+    # print(find_class(science_teacher))
+    # q = input(science_teacher.talk()).lower()  # mini-game offer
 
     log_data()
     charlocation = hallway[-1]
     play_music()
     back_to_room = []
+
+    hallway[2].connects_to[0].inventory.append(science_teacher)
 
     # runs game
     while game == True:

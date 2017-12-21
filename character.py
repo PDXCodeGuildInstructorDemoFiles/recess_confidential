@@ -4,6 +4,13 @@ class Character:
         self.description = description
         self.guilt = guilt
 
+    def __str__(self):
+        return self.name
+
+    def __repr__(self):
+        return self.name
+
+
 
 class NPC(Character):
     def __init__(self, name, description, interactions, guilt=False):
