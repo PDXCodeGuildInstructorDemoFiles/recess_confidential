@@ -3,6 +3,7 @@ from noir_rooms import Room
 import csv
 import os
 
+# global vars
 notebook = []
 hallway = []
 items = []
@@ -31,6 +32,7 @@ def log_data():
             except IndexError:
                 continue
 
+# Play music function
 def play_music():
     from pygame import mixer # Load the required library
 
@@ -38,11 +40,11 @@ def play_music():
     mixer.music.load('panther.mp3')
     mixer.music.play()
 
-# General Game Functions
-
+# Converts string of "True" to Boolean of <True>
 def boolean_check(str_bool):
     return True if str_bool == 'True' else False
 
+# Loads the ASCII graphics from fun.csv
 def game_start():
     with open('fun.csv') as csvfile:
         readCSV = csv.reader(csvfile, delimiter=',')
@@ -55,12 +57,15 @@ def game_start():
 
     print("")
 
-
+# Opening story dialogue
 def start_dialogue():
     print("It was a sunny afternoon at Central Elementary School.\n")
 
+# Menu interface with Navigating rooms to
 def navigation():
     global charlocation
+
+    # Checks to see if user is in hallway
     if charlocation.size == "1" and charlocation.name == "Hallway":
         print("You are standing in the {}.\n".format(charlocation.name))
         print("You can visit:")
@@ -70,6 +75,7 @@ def navigation():
             print("[{}] {}".format(i, key))
         charlocation = hallway[int(input("\nWhere would you like to go?\n"))-1]
         navigation()
+    # Checks to see if user is in big rooms (i.e. cafeteria, nurses room,science lab, etc)
     elif charlocation.size == "1":
         print(charlocation.description)
         print("In {} room you can explore:\n".format(charlocation.name))
@@ -87,6 +93,7 @@ def navigation():
             back_to_room = charlocation
             charlocation = charlocation.connects_to[user]
             navigation()
+    # Checks to see if user is in small room (i.e. POIs)
     elif charlocation.size == "0":
         print("\n\nAt {}, you see: ".format(charlocation.name))
         for i in range(len(charlocation.inventory)):
@@ -97,10 +104,11 @@ def navigation():
         input("Which object do you want to look at?")
         input("")
 
-
+# Function that returns the class of an object (i.e. room,item,character)
 def find_class(new_obj):
-    print(new_obj.__class__.__name__)
+    return (new_obj.__class__.__name__)
 
+# Menu Interface
 def menu():
     print("[C]heck Inventory\n[R]ead Notebook\n[H]elp\n[M]ove\n")
     user = input("What would you like to do?\n").lower()
@@ -110,16 +118,15 @@ def menu():
         print(notebook)
         input("[PRESS ANY KEY]")
 
-
-
+# Init Function
 
 if __name__ == '__main__':
     game = True
 
 
     log_data()
-    play_music()
     charlocation = hallway[-1]
+    play_music()
     back_to_room = []
 
 
@@ -146,5 +153,3 @@ if __name__ == '__main__':
 
         elif user == 'q':
             quit()
-
-
