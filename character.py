@@ -25,7 +25,7 @@ class Player(Character):
         Character.__init__(self, name, description, guilt)
         # self.notebook = Notebook()
         self.keycard = False
-        self.current_loc = hallway
+        self.current_loc = hallway[-1]
         self.prev_loc = None
 
     def move(self, current_room, new_room):
