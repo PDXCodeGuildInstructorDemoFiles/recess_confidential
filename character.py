@@ -12,11 +12,11 @@ class NpcEssential(Character):
         self.mini_game = mini_game
 
     def talk(self):
-        return self.interactions_essential[self.name]['game_offer']
+        return self.interactions[self.name]['game_offer']
 
     def conclude(self, outcome):
         if outcome:
-            print(self.interactions_essential[self.name]['conclusion'])
+            print(self.interactions[self.name]['conclusion'])
         else:
             print("Better luck next time!")
 
@@ -25,11 +25,12 @@ class NpcEssential(Character):
 
 
 class NpcNonEssential(Character):
-    def __init__(self, name, description):
+    def __init__(self, name, description,interactions):
         Character.__init__(self, name, description)
+        self.interactions = interactions
 
     def talk(self):
-        print(self.interactions_non_essential[self.name])
+        print(self.interactions[self.name])
 
 
 
