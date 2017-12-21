@@ -1,7 +1,9 @@
+# modules
 from noir_items import Item
 from noir_rooms import Room
 import csv
 import os
+import urllib
 
 # global vars
 notebook = []
@@ -14,18 +16,21 @@ def log_data():
     with open('data.csv') as csvfile:
         readCSV = csv.reader(csvfile, delimiter=',')
         all_rooms = []
-    
-        # First 
+
         for column in readCSV:
             try:
+                # imports small rooms first
                 if column[0] == 'small_room':
                     all_rooms.append(Room(column[1],column[2],column[3]))
+                # imports big room after and puts the small rooms in the big room
                 elif column[0] == 'big_room':
                     big_room = Room(column[1], column[2],column[3])
+                    # loops through the all_rooms list to add to the big room
                     for i in all_rooms:
                         big_room.add_room(i)
                     hallway.append(big_room)
                     all_rooms = []
+                # imports items
                 elif column[0] == 'item':
                     temp_item = Item(column[1],column[2],boolean_check(column[3]),boolean_check(column[4]),column[5],int(column[6]))
                     items.append(temp_item)
@@ -49,21 +54,30 @@ def game_start():
     with open('fun.csv') as csvfile:
         readCSV = csv.reader(csvfile, delimiter=',')
 
+        # prints each line of the fun.csv file from top to bottom
         for row in readCSV:
             try:
                 print(row[0])
             except IndexError:
                 continue
-
     print("")
 
 # Opening story dialogue
 def start_dialogue():
     print("It was a sunny afternoon at Central Elementary School.\n")
+    print("Your are in the hallway. \nYou hear a scream and a bloody head rolls out of a classroom. \n")
+    input("\n\n\n[PRESS ANY KEY]")
+
 
 # Menu interface with Navigating rooms to
 def navigation():
     global charlocation
+    global back_to_room
+    global user
+    os.system('cls' if os.name == 'nt' else 'clear')
+
+    print(charlocation.description)
+    print("")
 
     # Checks to see if user is in hallway
     if charlocation.size == "1" and charlocation.name == "Hallway":
@@ -82,12 +96,15 @@ def navigation():
         for i in range(len(charlocation.connects_to)):
             print("[{}] {}".format(i, charlocation.connects_to[i]))
 
-        print("\n[H] (Return to Hallway)")
+        print("\n[R]eturn to Hallway")
+        print("[M]enu")
 
         user = input("Where would you like to go?\n").lower()
-        if user == 'h':
-            charlocation = hallway
+        if user == 'r':
+            charlocation = hallway[-1]
             navigation()
+        elif user == 'm':
+            menu()
         else:
             user = int(user)
             back_to_room = charlocation
@@ -98,11 +115,22 @@ def navigation():
         print("\n\nAt {}, you see: ".format(charlocation.name))
         for i in range(len(charlocation.inventory)):
             print("[{}] {}".format(i, charlocation.inventory[i]))
-        print("")
-        print("\n[H] (Return to {)".format(back_to_room))
 
-        input("Which object do you want to look at?")
-        input("")
+        print("")
+        print("\n[R]eturn to {})".format(back_to_room))
+
+        user = input("Which object do you want to look at?")
+
+        if user == 'r':
+            charlocation = back_to_room
+            navigation()
+        elif user == 'm':
+            menu()
+        else:
+            user = int(user)
+            back_to_room = charlocation
+            charlocation = charlocation.connects_to[user]
+            navigation()
 
 # Function that returns the class of an object (i.e. room,item,character)
 def find_class(new_obj):
@@ -110,6 +138,9 @@ def find_class(new_obj):
 
 # Menu Interface
 def menu():
+    os.system('cls' if os.name == 'nt' else 'clear')
+    print(charlocation.description)
+    print("")
     print("[C]heck Inventory\n[R]ead Notebook\n[H]elp\n[M]ove\n")
     user = input("What would you like to do?\n").lower()
     if user == 'm':
@@ -119,7 +150,6 @@ def menu():
         input("[PRESS ANY KEY]")
 
 # Init Function
-
 if __name__ == '__main__':
     game = True
 
@@ -146,8 +176,6 @@ if __name__ == '__main__':
             start = True
 
             start_dialogue()
-            print("Your are in the hallway. \nYou hear a scream and a bloody head rolls out of a classroom. \n")
-            input("\n\n\n[Press any key]")
 
             # loop for continued action select
             while start == True:

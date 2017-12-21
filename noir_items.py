@@ -1,7 +1,3 @@
-items = ["gerbil", "key", "candybars", ]
-
-# gerbil = item("gerbil","There is a weird looking gerbil",False,3,True,"I have the gerbil",0)
-# key = item("key","This key looks like it is used for a room",True,1,True,"One blue key",0)
 
 
 class Item:
@@ -18,6 +14,13 @@ class Item:
 
     def __repr__(self):
         return self.name
+
+
+# items = ["gerbil", "key", "candybars", ]
+
+# gerbil = item("gerbil","There is a weird looking gerbil",False,3,True,"I have the gerbil",0)
+# key = item("key","This key looks like it is used for a room",True,1,True,"One blue key",0)
+
 
 # class games(self):
 #     self.name = name
