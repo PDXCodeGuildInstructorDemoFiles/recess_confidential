@@ -3,87 +3,148 @@ from noir_rooms import Room
 import csv
 import os
 
+notebook = []
+hallway = []
+items = []
+characters = []
 
-# from pygame import mixer # Load the required library
-#
-# mixer.init()
-# mixer.music.load('panther.mp3')
-# mixer.music.play()
+# Collects data from Data.csv and creates variables
+def log_data():
+    with open('data.csv') as csvfile:
+        readCSV = csv.reader(csvfile, delimiter=',')
+        all_rooms = []
+    
+        # First 
+        for column in readCSV:
+            try:
+                if column[0] == 'small_room':
+                    all_rooms.append(Room(column[1],column[2],column[3]))
+                elif column[0] == 'big_room':
+                    big_room = Room(column[1], column[2],column[3])
+                    for i in all_rooms:
+                        big_room.add_room(i)
+                    hallway.append(big_room)
+                    all_rooms = []
+                elif column[0] == 'item':
+                    temp_item = Item(column[1],column[2],boolean_check(column[3]),boolean_check(column[4]),column[5],int(column[6]))
+                    items.append(temp_item)
+            except IndexError:
+                continue
+
+# def play_music()
+    # from pygame import mixer # Load the required library
+    #
+    # mixer.init()
+    # mixer.music.load('panther.mp3')
+    # mixer.music.play()
 
 # General Game Functions
 
 def boolean_check(str_bool):
     return True if str_bool == 'True' else False
 
-# Stores Data from Data.csv and creates variables
-with open('data.csv') as csvfile:
-    readCSV = csv.reader(csvfile, delimiter=',')
-    all_rooms = []
-    hallway = {}
-    items = {}
+def game_start():
+    with open('fun.csv') as csvfile:
+        readCSV = csv.reader(csvfile, delimiter=',')
 
-    for row in readCSV:
-        try:
-            if row[0] == 'small_room':
-                all_rooms.append(Room(row[1],row[2]))
-            elif row[0] == 'big_room':
-                big_room = Room(row[1], row[2])
-                for i in all_rooms:
-                    big_room.add_room(i)
-                hallway[big_room.name] = big_room
-                all_rooms = []
-            elif row[0] == 'item':
-                temp_item = Item(row[1],row[2],boolean_check(row[3]),boolean_check(row[4]),row[5],int(row[6]))
-                items[temp_item.name] = temp_item
-        except IndexError:
-            continue
+        for row in readCSV:
+            try:
+                print(row[0])
+            except IndexError:
+                continue
+
+    print("")
+
+
+def start_dialogue():
+    print("It was a sunny afternoon at Central Elementary School.\n")
+
+def navigation():
+    global charlocation
+    if charlocation.size == "1" and charlocation.name == "Hallway":
+        print("You are standing in the hallway.\n")
+        print("You can visit:")
+        i = 0
+        for key in hallway:
+            i += 1
+            print("[{}] {}".format(i, key))
+        charlocation = hallway[int(input("\nWhere would you like to go?\n"))-1]
+        navigation()
+    elif charlocation.size == "1":
+        print(charlocation.description)
+        print("In {} room you can explore:\n".format(charlocation.name))
+        for i in range(len(charlocation.connects_to)):
+            print("[{}] {}".format(i, charlocation.connects_to[i]))
+
+        print("\n[H] (Return to Hallway)")
+
+        user = input("Where would you like to go?\n").lower()
+        if user == 'h':
+            charlocation = hallway
+            navigation()
+        else:
+            user = int(user)
+            back_to_room = charlocation
+            charlocation = charlocation.connects_to[user]
+            navigation()
+    elif charlocation.size == "0":
+        print("\n\nAt {}, you see: ".format(charlocation.name))
+        for i in range(len(charlocation.inventory)):
+            print("[{}] {}".format(i, charlocation.inventory[i]))
+        print("")
+        print("\n[H] (Return to {)".format(back_to_room))
+
+        input("Which object do you want to look at?")
+        input("")
+
+
+def find_class(new_obj):
+    print(new_obj.__class__.__name__)
+
+def menu():
+    print("[C]heck Inventory\n[R]ead Notebook\n[H]elp\n[M]ove\n")
+    user = input("What would you like to do?\n").lower()
+    if user == 'm':
+         navigation()
+    elif user == 'r':
+        print(notebook)
+        input("[PRESS ANY KEY]")
+
 
 
 
 if __name__ == '__main__':
     game = True
-    round = True
-    location = ""
-    notebook = []
+
+
+    log_data()
+    charlocation = hallway[-1]
+    back_to_room = []
+
 
     while game == True:
         os.system('cls' if os.name == 'nt' else 'clear')
-
-        with open('fun.csv') as csvfile:
-            readCSV = csv.reader(csvfile, delimiter=',')
-
-            for row in readCSV:
-                print(row)
-
-        print("----RECESS CONFIDENTIAL----\n")
-
+        game_start()
+        print(hallway)
         user = input("Would you like to:\n" \
-                     "(S)tart a game\n" \
-                     "(Q)uit the game\n" \
-                     ).lower()
+                                    "(S)tart a game\n" \
+                                    "(Q)uit the game\n" \
+                                     ).lower()
 
         if user == 's':
-            while round == True:
+            os.system('cls' if os.name == 'nt' else 'clear')
+            start = True
+
+            start_dialogue()
+            print("Your are in the hallway. \nYou hear a scream and a bloody head rolls out of a classroom. \n")
+            input("\n\n\n[Press any key]")
+
+            while start == True:
                 os.system('cls' if os.name == 'nt' else 'clear')
-                print("Your are in a hallway. \nYou hear a scream and a bloody head rolls out of a classroom. \n")
-                print("[C]heck Inventory  -- [R]ead Notebook\n")
-                print("You see:")
-                i = 0
-                for key,value in hallway.items():
-                    i += 1
-                    print("[{}] {}".format(i,key))
+                print("")
+                menu()
 
-                input("Where would you like to go?")
+        elif user == 'q':
+            quit()
 
 
-
-
-
-    # for key, value in items.items():
-    #     print(key)
-    #
-    # print(items['Hair pin'].mutable)
-
-# item_chosen = lunchtable.contains()
-#
-# print(type(hallway['Cafeteria']))

@@ -1,11 +1,10 @@
-
-
 class Room:
     move_choice = -1
 
-    def __init__(self, name, description):
+    def __init__(self, name, description,size):
         self.name = name
-        self.description = description  ##string
+        self.description = description.replace('\n', '\\n')  ##string
+        self.size = size
         self.inventory = []  ##list[item (or) character]
         self.open_req = []
         self.connects_to = []
@@ -18,21 +17,6 @@ class Room:
 
     def add_room(self,room):
         self.connects_to.append(room)
-
-    def print_choices(self):
-        print("In {} room you see:".format(self.name))
-        for i in range(len(self.connects_to)):
-            print("[{}] {}".format(i,self.connects_to[i]))
-
-        return int(input("Where do you want to go? \n"))
-
-    def contains(self):
-        print("At {}, you see: ".format(self.name))
-        for i in range(len(self.inventory)):
-            print("[{}] {}".format(i,self.inventory[i]))
-        print("")
-        return int(input("Which object do you want to look at?"))
-
 
     def move_to(self):
         self.move_count = self.move_distance + 1
