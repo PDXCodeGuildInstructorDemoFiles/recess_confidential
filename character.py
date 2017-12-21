@@ -1,29 +1,42 @@
 class Character:
-    def __init__(self, name, description, guilt=False):
+    def __init__(self, name, description):
         self.name = name
         self.description = description
-        self.guilt = guilt
 
 
-class NPC(Character):
-    def __init__(self, name, description, interactions, guilt=False):
-        Character.__init__(self, name, description, guilt)
+class NpcEssential(Character):
+    def __init__(self, name, description, interactions, mini_game = None, inventory=[]):
+        Character.__init__(self, name, description)
         self.interactions = interactions
+        self.inventory = inventory
+        self.mini_game = mini_game
 
     def talk(self):
-        return self.interactions[self.name]['game_offer']
+        return self.interactions_essential[self.name]['game_offer']
 
     def conclude(self, outcome):
         if outcome:
-            print(self.interactions[self.name]['conclusion'])
+            print(self.interactions_essential[self.name]['conclusion'])
         else:
             print("Better luck next time!")
 
+    def give(self):
+        for item in self.inventory:
+
+
+class NpcNonEssential(Character):
+    def __init__(self, name, description):
+        Character.__init__(self, name, description)
+
+    def talk(self):
+        print(self.interactions_non_essential[self.name])
+
+
 
 class Player(Character):
-    def __init__(self, name, description, guilt=False):
-        Character.__init__(self, name, description, guilt)
-        # self.notebook = Notebook()
+    def __init__(self, name, description):
+        Character.__init__(self, name, description)
+        self.notebook = Notebook()
         self.keycard = False
         self.current_loc = hallway[-1]
         self.prev_loc = None
@@ -34,11 +47,8 @@ class Player(Character):
         self.prev_loc = self.current_loc
         self.current_loc = new_room
 
-    def examine_object(self, object):
-        pass
-
-    def store_object(self, object):
-        pass
+    def log_clue(self, clue):
+        self.notebook.write(clue)
 
 
 if __name__ == '__main__':
