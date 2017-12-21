@@ -31,12 +31,12 @@ def log_data():
             except IndexError:
                 continue
 
-# def play_music()
-    # from pygame import mixer # Load the required library
-    #
-    # mixer.init()
-    # mixer.music.load('panther.mp3')
-    # mixer.music.play()
+def play_music():
+    from pygame import mixer # Load the required library
+
+    mixer.init()
+    mixer.music.load('panther.mp3')
+    mixer.music.play()
 
 # General Game Functions
 
@@ -118,6 +118,7 @@ if __name__ == '__main__':
 
 
     log_data()
+    play_music()
     charlocation = hallway[-1]
     back_to_room = []
 
