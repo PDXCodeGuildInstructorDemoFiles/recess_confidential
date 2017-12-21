@@ -23,11 +23,16 @@ class NPC(Character):
 class Player(Character):
     def __init__(self, name, description, guilt=False):
         Character.__init__(self, name, description, guilt)
-        self.notebook = Notebook()
+        # self.notebook = Notebook()
         self.keycard = False
+        self.current_loc = hallway
+        self.prev_loc = None
 
     def move(self, current_room, new_room):
-        pass
+        current_room.inventory.remove(self)
+        new_room.inventory.append(self)
+        self.prev_loc = self.current_loc
+        self.current_loc = new_room
 
     def examine_object(self, object):
         pass
@@ -38,8 +43,4 @@ class Player(Character):
 
 if __name__ == '__main__':
     pass
-
-
-
-
 
