@@ -1,5 +1,3 @@
-
-
 class Item:
     def __init__(self, name, description,visible,mutable,notebook,points):
         self.name = name
