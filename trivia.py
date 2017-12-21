@@ -2,13 +2,13 @@ import sys
 import json
 import random
 
-def trivia_game():
+def trivia_game(genre):
     
-    with open('trivia_json/film_formatted.json', 'r') as f:
+    with open(f'trivia_json/{genre}_formatted.json', 'r') as f:
         data = json.loads(f.read())
         questions = []
         
-        for ask in range(10):
+        for ask in range(0,10):
             secure_random = random.SystemRandom()
             questions.append(secure_random.choice(data))
 
@@ -33,4 +33,4 @@ def trivia_game():
     else:
         return False
 
-reward = trivia_game()
+
