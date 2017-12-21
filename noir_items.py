@@ -5,7 +5,7 @@ items = ["gerbil", "key", "candybars", ]
 
 
 class Item:
-    def __init__(self, name, description, visible,mutable,notebook,points):
+    def __init__(self, name, description,visible,mutable,notebook,points):
         self.name = name
         self.description = description      ##string
         self.visible = visible              ##boolean
@@ -25,12 +25,21 @@ class Item:
 ##tic tac toe
 ##blackjack
 ##trivia
+#
+# hairpin = Item("Hair pin","This is one really yummy looking candy bar",True,True,"I found a suspicious hairpin",2)
+# pet_food = Item("pet food","This is some gerbil food",False,True,"Found some gerbil food",2)
+# student_list = Item("allergy list","These students are allergic to gerbils:<list_students>",True,True,"Some students are allergic.",2)
+# sick_student = Item("sick student","This is one really yummy looking candy bar",True,True,"A student was sick",2)
+# absent_student = Item("speech therapy","<Name> was at speech therapy",True,True,"A student was absent",2)
 
-hairpin = Item("Hair pin","This is one really yummy looking candy bar",True,True,"I found a suspicious hairpin",2)
-pet_food = Item("pet food","This is some gerbil food",False,True,"Found some gerbil food",2)
-student_list = Item("allergy list","These students are allergic to gerbils:<list_students>",True,True,"Some students are allergic.",2)
-sick_student = Item("sick student","This is one really yummy looking candy bar",True,True,"A student was sick",2)
-absent_student = Item("speech therapy","<Name> was at speech therapy",True,True,"A student was absent",2)
+# print("Inspecting...")
+# time.sleep(2)
+# if print_choices == 1:
+# ##describe item and add to inventory
+# elif print_choices == 0:
+# ##play game module
+# else:
+#     print("Please Try Again")
 
 # def add_to_note_book(self):
 #     notebook_list.append(<item>.notebook)

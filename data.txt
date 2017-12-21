@@ -1,0 +1,2 @@
+Class Room 10b,There is an empty classroom with a chalkboard and desks.
+Teacher's Desk,There is a teacher's desk by the chalkboard,Class Room 10b
