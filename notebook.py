@@ -1,5 +1,4 @@
 from noir_items import Item
-from character import *
 
 
 class Notebook:
@@ -24,18 +23,4 @@ class Notebook:
 
 
 if __name__ == '__main__':
-    p_note = Notebook()
-    apple = Item('apple', 'a red delicious apple', True, False, 'seems suspicious', 2)
-    calendar = Item('calendar', 'a wall calendar', True, False, 'november 3rd is circled', 3)
-
-    p_note.write(apple)
-    teacher = NpcEssential('Mrs. Frizzle', 'Frazzled', {'hi'})
-    teacher.inventory.append(calendar)
-
-    print(p_note)
-    print(p_note.points_total())
-
-    p_note.write(teacher.give())
-
-    print(p_note)
-    print(p_note.points_total())
+   pass
