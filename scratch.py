@@ -1,15 +1,4 @@
-from character import NPC, Player
-# from obj_scratch import Item, Room
-#
-# li = Player('Li', 'A developer working on this game', guilt=True)\
-#
-# class_room = Room('PDX Code Guild Classroom')
-# bathroom = Room('A place to pee')
-# apple = Item('Apple')
-# class_room.add_inv(li)
-# class_room.add_inv(apple)
-# class_room.print_inv()
-
+from character import NPC
 
 
 interactions = {'Mrs. Frizzle': {'game_offer': 'Would you like to play trivia? ', 'conclusion': 'Ok, here\'s the key.'}}
@@ -27,4 +16,3 @@ if NPC.essential
         print('Ok, see you later.')  # chose not to play
 else:
     print(npc.talk())
-
