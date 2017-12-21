@@ -62,7 +62,7 @@ def start_dialogue():
 def navigation():
     global charlocation
     if charlocation.size == "1" and charlocation.name == "Hallway":
-        print("You are standing in the hallway.\n")
+        print("You are standing in the {}.\n".format(charlocation.name))
         print("You can visit:")
         i = 0
         for key in hallway:
@@ -126,7 +126,6 @@ if __name__ == '__main__':
     while game == True:
         os.system('cls' if os.name == 'nt' else 'clear')
         game_start()
-        print(hallway)
         user = input("Would you like to:\n" \
                                     "(S)tart a game\n" \
                                     "(Q)uit the game\n" \
