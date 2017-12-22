@@ -24,7 +24,7 @@ def log_data():
                 # imports items
                 if column[0] == 'item':
                     temp_item = Item(str_escape(column[1]), str_escape(column[2]), boolean_check(column[3]), boolean_check(column[4]),
-                                     str_escape(column[5]), column[6])
+                                     str_escape(column[5]), int(column[6]))
                     items.append(temp_item)
                     all_items.append(temp_item)
                 # imports small rooms first and adds all items before the small room
