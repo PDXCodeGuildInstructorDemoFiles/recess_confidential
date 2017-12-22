@@ -32,5 +32,3 @@ def trivia_game(genre):
         return True
     else:
         return False
-
-

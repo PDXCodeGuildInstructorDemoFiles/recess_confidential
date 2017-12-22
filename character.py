@@ -13,7 +13,6 @@ class Character:
         return self.name
 
 
-
 class NpcEssential(Character):
     def __init__(self, name, description, interactions, mini_game=None, gameparam=None):
         Character.__init__(self, name, description)

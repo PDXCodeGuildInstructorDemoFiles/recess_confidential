@@ -9,12 +9,13 @@ import csv
 import os
 import urllib
 import npc_list
-from pygame import mixer # Load the required library for music (pip3 install pygame)
+from pygame import mixer  # Load the required library for music (pip3 install pygame)
+
 
 # Collects data from Data.csv and creates variables
 def log_data():
     with open('data.csv') as csvfile:
-        readCSV = csv.reader(csvfile,delimiter='|')
+        readCSV = csv.reader(csvfile, delimiter='|')
         all_rooms = []
         all_items = []
 
@@ -23,7 +24,8 @@ def log_data():
             try:
                 # imports items
                 if column[0] == 'item':
-                    temp_item = Item(str_escape(column[1]), str_escape(column[2]), boolean_check(column[3]), boolean_check(column[4]),
+                    temp_item = Item(str_escape(column[1]), str_escape(column[2]), boolean_check(column[3]),
+                                     boolean_check(column[4]),
                                      str_escape(column[5]), int(column[6]))
                     items.append(temp_item)
                     all_items.append(temp_item)
@@ -45,18 +47,22 @@ def log_data():
             except IndexError:
                 continue
 
+
 # Play music function
 def play_music():
     mixer.init()
     mixer.music.load('panther.mp3')
     mixer.music.play()
 
+
 # Converts string of "True" to Boolean of <True>
 def boolean_check(str_bool):
     return True if str_bool == 'True' else False
 
+
 def str_escape(str):
     return str.encode('utf-8').decode("unicode_escape")
+
 
 # Loads the ASCII graphics from fun.csv
 def game_start():
@@ -70,6 +76,7 @@ def game_start():
             except IndexError:
                 continue
     print("")
+
 
 # Opening story dialogue
 def start_dialogue():
@@ -85,6 +92,8 @@ def start_dialogue():
     print("If you succeed, only the guilty party will get detention. If you do extremely well, everyone\n")
     print("will get a pizza party (with the exception of the guilty party).")
     input("\n\n\n[PRESS ANY KEY]")
+
+
 # Menu interface with Navigating rooms
 def navigation():
     os.system('cls' if os.name == 'nt' else 'clear')
@@ -123,7 +132,7 @@ def navigation():
             print("\nIn the {} room you can explore:\n".format(charlocation.name))
 
             for i in range(len(charlocation.connects_to)):
-                print("[{}] {}".format(i+1, charlocation.connects_to[i]))
+                print("[{}] {}".format(i + 1, charlocation.connects_to[i]))
 
             print("\n[R]eturn to Hallway")
             print("[M]enu")
@@ -146,7 +155,7 @@ def navigation():
             print(charlocation.description)
             print("\n\nAt {}, you see: ".format(charlocation.name))
             for i in range(len(charlocation.inventory)):
-                print("[{}] {}".format(i+1, charlocation.inventory[i]))
+                print("[{}] {}".format(i + 1, charlocation.inventory[i]))
 
             print("")
             print("\n[R]eturn to {}".format(back_to_room))
@@ -171,14 +180,16 @@ def navigation():
                     print("\n")
                     p_note.write(choice_item)
                     charlocation.inventory.remove(choice_item)
-                elif find_class(charlocation.inventory[q]) == "NpcEssential" or find_class(charlocation.inventory[q]) == "NPCNonEssential":
+                elif find_class(charlocation.inventory[q]) == "NpcEssential" or find_class(
+                        charlocation.inventory[q]) == "NPCNonEssential":
                     # changes variable to choice_npc for clarity
                     choice_npc = charlocation.inventory[q]
                     print("\n")
                     if find_class(choice_npc) == "NpcEssential":
                         q = input(choice_npc.talk()).lower()  # mini-game offer
                         if q == 'y':
-                            reward = choice_npc.mini_game(choice_npc.gameparam)  # this would be returned by the mini-game
+                            reward = choice_npc.mini_game(
+                                choice_npc.gameparam)  # this would be returned by the mini-game
                             choice_npc.conclude(reward)  # prize or no prize
                             if reward > 0:
                                 p_note.write(choice_npc.give())
@@ -192,9 +203,11 @@ def navigation():
         input("That is not a possible choice. Please try again... punk.")
         navigation()
 
+
 # Function that returns the class of an object (i.e. room,item,character)
 def find_class(new_obj):
     return new_obj.__class__.__name__
+
 
 # Menu Interface
 def menu():
@@ -219,6 +232,7 @@ def menu():
     else:
         input("Could not compute...Try again.")
 
+
 def score_check():
     # NOTE: need to add boolean checks so that actions don't repeat'
     # <if notebook points is greater than num run this code and add dialogue/npc to game>
@@ -230,10 +244,12 @@ def score_check():
         print("You are doing ggggggrrrrrrreeeeeat. You think you might know who did it")
         input("")
 
+
 def win_condition():
     print("Congratulations. You won!!!")
     input("...")
     quit()
+
 
 # Init Function
 if __name__ == '__main__':
@@ -253,11 +269,13 @@ if __name__ == '__main__':
     back_to_room = []
     p_note = Notebook()
     # Appends NPC to small rooms
-    clue01 = Item("Red's ultimate clue","Red heard that the girl took care of the gerbil last week",False,False,"sketch PETA girl",5)
-    clue02 = Item("Ms Frizzle ultimate clue","Bad student kid thing is allergic yo",False,False,"not bad dude",5)
+    clue01 = Item("Red's ultimate clue", "Red heard that the girl took care of the gerbil last week", False, False,
+                  "sketch PETA girl", 5)
+    clue02 = Item("Ms Frizzle ultimate clue", "Bad student kid thing is allergic yo", False, False, "not bad dude", 5)
     npc_list.red_mcguffin.inventory.append(clue01)
     npc_list.ms_frizzle.inventory.append(clue02)
     locations_list[2].connects_to[0].inventory.append(npc_list.ms_frizzle)
+    locations_list[4].connects_to[0].inventory.append(npc_list.ned_beasley)
     locations_list[3].connects_to[0].inventory.append(npc_list.red_mcguffin)
 
     # runs game
@@ -266,10 +284,7 @@ if __name__ == '__main__':
         game_start()
 
         # start or quit select
-        q = input("Would you like to:\n" \
-                     "(S)tart a game\n" \
-                     "(Q)uit the game\n" \
-                     ).lower()
+        q = input("Would you like to:\n(S)tart a game\n(Q)uit the game\n").lower()
 
         # begins game
         if q == 's':

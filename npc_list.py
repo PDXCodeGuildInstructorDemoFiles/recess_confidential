@@ -1,6 +1,8 @@
 import character
 import trivia
 import black_jack_func
+import tictac
+import noir_items
 
 interactions_essential = {
         'Jeremy': {
@@ -11,7 +13,10 @@ interactions_essential = {
             'conclusion': 'Congratulations! Here\'s your hall pass.'},
         'Red McGuffin': {
             'game_offer': 'PLAYER: Hi Red, you\'re on the Gerbil Crew right? Do you know who else access to the gerbil cage?\nRED McGUFFIN: Yup. But I\'ll only tell you if you beat me at blackjack. Wanna play?(y/n): ',
-            'conclusion': 'That was a good hand. Here\'s a list of the rest of the people on the crew. They all have keys to the cage.'}
+            'conclusion': 'That was a good hand. Here\'s a list of the rest of the people on the crew. They all have keys to the cage.'},
+        'Ned Beasley': {
+            'game_offer': 'PLAYER: Hey Ned, I need some information about a missing classroom pet. Have you seen anything that might help? NED BEASLEY: Hmmm... Yeah I do think I did see something this morning. How about you answer some questions I\'ve got and if you answer most of them I\'ll help you out?? (y/n): ',
+            'conclusion': 'Nice, dude! So look, this morning I did someone lurking around the classroom before 8:30. Looked like a girl but I couldn\'t really tell. That\'s all I got'}
     }
 
 interactions_nonessential = {
@@ -33,7 +38,7 @@ ms_frizzle = character.NpcEssential(
     gameparam = 'science',
     )
 
-comic_kid = character.NpcEssential(
+ned_beasley = character.NpcEssential(
     'Ned Beasley',
     'Resident comic-book expert',
     interactions_essential,
@@ -45,7 +50,8 @@ jeremy = character.NpcEssential(
     'Jeremy',
     'Tic-Tac-Toe Student',
     interactions_essential,
-    mini_game = "tic_tac2.TicTacToe",
+    mini_game = tictac.TicTacToe,
+    gameparam = 'player'
     )
 
 red_mcguffin = character.NpcEssential(
@@ -55,44 +61,53 @@ red_mcguffin = character.NpcEssential(
     mini_game = black_jack_func.black_jack,
     gameparam = 'player'
     )
+red_clue = noir_items.Item(
+    'Team List',
+    'A list of the members of the animal team',
+    False,
+    False,
+    'The animal cage is locked so only animal team members would have access to the cage',
+    5
+)
+red_mcguffin.inventory.append(red_clue)
 
 adam_jacobs = character.NpcNonEssential(
     'Adam Jacobs',
     'description',
-     interactions_essential
+    interactions_nonessential
     )
 bryce_balin = character.NpcNonEssential(
     'Bryce Balin',
     'description',
-     interactions_essential
+    interactions_nonessential
     )
 becky_barnett = character.NpcNonEssential(
     'Becky Barnett',
     'description',
-     interactions_essential
+    interactions_nonessential
     )
 jered_kropholler = character.NpcNonEssential(
     'Jered Kropholler',
     'description',
-     interactions_essential
+    interactions_nonessential
     )
 tanner_laramie = character.NpcNonEssential(
     'Tanner Laramie',
     'description',
-     interactions_essential
+    interactions_nonessential
     )
 jessica_nathenson = character.NpcNonEssential(
     'Jessica Nathenson',
     'description',
-     interactions_essential
+    interactions_nonessential
     )
 judy_wrench = character.NpcNonEssential(
     'Judy Wrench',
     'description',
-     interactions_essential
+    interactions_nonessential
     )
 lucy_zastophil = character.NpcNonEssential(
     'Lucy Zastophil',
     'description',
-     interactions_essential
+    interactions_nonessential
     )
