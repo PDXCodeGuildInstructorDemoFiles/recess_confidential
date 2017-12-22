@@ -149,12 +149,12 @@ def navigation():
                 print("NPC was chosen")
                 print("<Insert NPC code commands here>")
                 if find_class(charlocation.inventory[user]) == "NpcEssential":
+
                     q = input(charlocation.inventory[user].talk()).lower()  # mini-game offer
                     if q == 'y':
-                        print('TRIVIA GAME')  # here we would run the mini-game module.
-                        reward = 1  # this would be returned by the mini-game
+                        reward = charlocation.inventory[user].mini_game("science")  # this would be returned by the mini-game
                         charlocation.inventory[user].conclude(reward)  # prize or no prize
-                        player.notebook.write(charlocation.inventory[user].give())
+                        # player.notebook.write(charlocation.inventory[user].give())
                     else:
                         print('Ok, see you later.')  # chose not to play
                 else:
@@ -212,8 +212,7 @@ if __name__ == '__main__':
         'Ms. Frizzle',
         'Middle aged science teacher',
         interactions_essential,
-        mini_game="science",
-        inventory=[]
+        mini_game=trivia.trivia_game,
     )
 
     # jeremy = character.NpcEssential(

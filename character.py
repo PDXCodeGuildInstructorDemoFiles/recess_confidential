@@ -1,3 +1,6 @@
+from notebook import Notebook
+
+
 class Character:
     def __init__(self, name, description):
         self.name = name
@@ -9,11 +12,12 @@ class Character:
     def __repr__(self):
         return self.name
 
+
 class NpcEssential(Character):
-    def __init__(self, name, description, interactions, mini_game = None, inventory=[]):
+    def __init__(self, name, description, interactions, mini_game=None):
         Character.__init__(self, name, description)
         self.interactions = interactions
-        self.inventory = inventory
+        self.inventory = []
         self.mini_game = mini_game
 
     def talk(self):
@@ -26,24 +30,24 @@ class NpcEssential(Character):
             print("Better luck next time!")
 
     def give(self):
-        for item in self.inventory:
-            pass
+        return self.inventory.pop()
 
 
 class NpcNonEssential(Character):
-    def __init__(self, name, description,interactions_non_essential):
+    def __init__(self, name, description, interactions):
         Character.__init__(self, name, description)
-        self.interactions_non_essential = interactions_non_essential
+        self.interactions = interactions
 
     def talk(self):
-        print(self.interactions_non_essential[self.name])
+        print(self.interactions[self.name])
+
 
 class Player(Character):
     def __init__(self, name, description):
         Character.__init__(self, name, description)
         self.notebook = Notebook()
-        self.keycard = False
-        self.current_loc = hallway[-1]
+        self.keycard = self.check_keycard()
+        self.current_loc = None
         self.prev_loc = None
 
     def move(self, current_room, new_room):
@@ -55,7 +59,12 @@ class Player(Character):
     def log_clue(self, clue):
         self.notebook.write(clue)
 
+    def check_keycard(self):
+        for x in self.notebook.data:
+            if x.name == 'keycard':
+                return True
+            return False
+
 
 if __name__ == '__main__':
     pass
-
