@@ -9,7 +9,7 @@ import csv
 import os
 import urllib
 import npc_list
-from pygame import mixer # Load the required library for music (pip3 install pygame)
+# from pygame import mixer # Load the required library for music (pip3 install pygame)
 
 # Collects data from Data.csv and creates variables
 def log_data():
@@ -46,11 +46,11 @@ def log_data():
                 continue
 
 # Play music function
-def play_music():
+# def play_music():
     
-#     mixer.init()
-#     mixer.music.load('panther.mp3')
-#     mixer.music.play()
+# #     mixer.init()
+# #     mixer.music.load('panther.mp3')
+# #     mixer.music.play()
 
 # Converts string of "True" to Boolean of <True>
 def boolean_check(str_bool):
@@ -243,6 +243,7 @@ if __name__ == '__main__':
     npc_list.ms_frizzle.inventory.append(clue02)
     locations_list[2].connects_to[0].inventory.append(npc_list.ms_frizzle)
     locations_list[0].connects_to[1].inventory.append(npc_list.red_mcguffin)
+    locations_list[4].connects_to[0].inventory.append(npc_list.ned_beasley)
 
     # runs game
     while game:

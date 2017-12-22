@@ -2,6 +2,7 @@ import character
 import trivia
 import black_jack_func
 # import tictac
+import noir_items
 
 interactions_essential = {
         'Jeremy': {
@@ -22,7 +23,7 @@ interactions_essential = {
 ms_frizzle = character.NpcEssential(
     'Ms. Frizzle', 
     'Middle aged science teacher', 
-    interactions_essential, 
+    interactions_essential,
     mini_game = trivia.trivia_game,
     gameparam = 'science',
     )
@@ -50,6 +51,15 @@ red_mcguffin = character.NpcEssential(
     mini_game = black_jack_func.black_jack,
     gameparam = 'player' 
     )
+red_clue = noir_items.Item(
+    'Team List',
+    'A list of the members of the animal team',
+    False,
+    False,
+    'The animal cage is locked so only animal team members would have access to the cage',
+    5
+)
+red_mcguffin.inventory.append(red_clue)
 
 adam_jacobs = character.NpcNonEssential( 
     'Adam Jacobs', 

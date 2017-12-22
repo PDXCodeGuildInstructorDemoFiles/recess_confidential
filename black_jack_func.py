@@ -196,7 +196,3 @@ def black_jack(player_name):
 
 
     return game()
-<<<<<<< HEAD
-
-=======
->>>>>>> master
