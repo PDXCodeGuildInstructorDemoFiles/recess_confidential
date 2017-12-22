@@ -13,12 +13,14 @@ class Character:
         return self.name
 
 
+
 class NpcEssential(Character):
-    def __init__(self, name, description, interactions, mini_game=None):
+    def __init__(self, name, description, interactions, mini_game=None, gameparam=None):
         Character.__init__(self, name, description)
         self.interactions = interactions
         self.inventory = []
         self.mini_game = mini_game
+        self.gameparam = gameparam
 
     def talk(self):
         return self.interactions[self.name]['game_offer']
