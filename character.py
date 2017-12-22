@@ -20,6 +20,7 @@ class NpcEssential(Character):
         self.inventory = []
         self.mini_game = mini_game
         self.gameparam = gameparam
+        self.games_played = 0
 
     def talk(self):
         return self.interactions[self.name]['game_offer']
@@ -29,6 +30,15 @@ class NpcEssential(Character):
             print(self.interactions[self.name]['conclusion'])
         else:
             print("Better luck next time!")
+
+    def set_reward_value(self):
+        for x in self.inventory:
+            if self.games_played == 0:
+                x.points = 5
+            elif self.games_played == 1:
+                x.points = 3
+            else:
+                x.points = 2
 
     def give(self):
         return self.inventory.pop()
@@ -47,9 +57,9 @@ class Player(Character):
     def __init__(self, name, description):
         Character.__init__(self, name, description)
         self.notebook = Notebook()
-        self.keycard = self.check_keycard()
+        self.hall_pass = self.check_hall_pass()
         self.current_loc = None
-        self.prev_loc = []
+        self.prev_loc = None
 
     def move(self, current_room, new_room):
         current_room.inventory.remove(self)
@@ -60,12 +70,11 @@ class Player(Character):
     def log_clue(self, clue):
         self.notebook.write(clue)
 
-    def check_keycard(self):
+    def check_hall_pass(self):
         for x in self.notebook.data:
-            if x.name == 'keycard':
+            if x.name == 'hall pass':
                 return True
             return False
-
 
 
 if __name__ == '__main__':
