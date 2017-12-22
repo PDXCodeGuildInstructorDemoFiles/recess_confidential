@@ -1,23 +1,26 @@
-item,pet food,This is some gerbil food,False,True,Found some gerbil food,2
-item,Hair pin,This is what we put on hair,True,True,I found a suspicious hairpin,2
-small_room,Lunch Table,There is a half eaten slice of pizza on the table,0
-small_room,Black Jack Table,There are a lot of kids playing blackjack,0
-big_room,Cafeteria,You enter the cafeteria. There are a lot of students waiting in the food line. There are students eating at the tables. nYou see a group of students playing a card game at a table.,1
-item,allergy list,These students are allergic to gerbils:<list_students>,True,True,Some students are allergic,2
-small_room,Medicine Cabinet,This is a medicine cabinet. You see white powder inside. Snort it.,0
-small_room,The Chair,Someone has recently been killed here.,0
-big_room,Nurse's Office,This is a clean room full of bandaids and tums,1
-item,broken beaker,The beaker appears to have been knocked of the table ,False,True,Broken beaker glass,0
-small_room,Beakers,beep beep,0
-item,gerbil eraser,A used gerbil eraser is resting by the sink,False,True,it seems useless,2
-small_room,Sink,Everything is blue,0
-big_room,Science Lab,A good place for Blue Sky and some hard candy.,1
-small_room,Coffee Machine,covfefe lots of covfefe,0
-big_room,Teacher's Lounge,Place where teacher's hide from students,1
-small_room,Teacher's Desk,There is a teacher's desk by the chalkboard,0
-big_room,Class Room 10b,There is an empty classroom with a chalkboard and desks.,1
-big_room,Hallway,This is the hallway with lockers,1
-
-
-
-
+item@Hair pin@This is what we put on hair@True@True@I found a suspicious hairpin@2
+item@allergy list@These students are allergic to gerbils:<list_students>@True@True@Some students are allergic@2
+small_room@Lunch Table@There is a half eaten slice of pizza on the table@0
+small_room@Black Jack Table@There are a lot of kids playing blackjack@0
+big_room@Cafeteria@You enter the cafeteria. There are a lot of students waiting in the food line. There are students eating at the tables. nYou see a group of students playing a card game at a table.@1
+small_room@Medicine Cabinet@This is a medicine cabinet. You see white powder inside. Snort it.@0
+small_room@The Chair@Someone has recently been killed here.@0
+big_room@Nurse's Office@This is a clean room full of bandaids and tums@1
+item@broken beaker@The beaker appears to have been knocked of the table@False@True@Broken beaker glass@0
+small_room@Beakers@beep beep@0
+small_room@Sink@Everything is blue@0
+big_room@Science Lab@A good place for Blue Sky and some hard candy.@1
+small_room@Coffee Machine@covfefe lots of covfefe@0
+big_room@Teacher's Lounge@Place where teacher's hide from students@1
+item@jock strap@ You discover amongst the rubbage a disgusting jock strap@False@True@digusting jock strap@0
+small_room@bleachers@A set of flithy bleachers from last night's game@0
+big_room@Gym@As you walk into the gym you are immediately hit by the smell of sweat and bleach. You hold back your breath and examine the room. You don’t see much of consequence aside from the wooden floor & bleachers & basketball hoops.@1
+item@class roster@CLASS ROSTER: Adam Jacobs\nBryce Balin\nBecky Barnett\nJered Kropholler\nTanner Laramie\nJessica Nathenson\nRed McGuffin\nJeremy Townsend\nJudy Wrench\nLucy Zastophil@True@True@CLASS ROSTER: Adam Jacobs\nBryce Balin\nBecky Barnett\nJered Kropholler\nTanner Laramie\nJessica Nathenson\nRed McGuffin\nJeremy Townsend\nJudy Wrench\nLucy Zastophil@0
+small_room@Bulletin Board@You see a collage of papers@0
+item@tie-dyed cloth@You notice stuck on the wire is a piece of tie-dyed cloth.@True@True@A piece of tie-died cloth found at the crime scene@2
+small_room@Gerbil's Cage@You walk over to the empty cage and see that the cage door has indeed be left open.@0
+small_room@Teacher's Desk@There is a teacher's desk by the chalkboard@0
+big_room@Class Room 10b@There is an empty classroom with a chalkboard and desks.@1
+item@pet food@You discover some gerbil food inside@False@True@Found some gerbil food in the PETA decorated locker@2
+small_room@lockers@You find only one locker left unlocked. Inside are posters of PETA@0
+big_room@Hallway@The hallway has access to every room but some are locked. The doors you can see lead to The Classroom - The Gym - The Nurses’ Office - The Playground - The Science Lab - The Teachers’ Lounge & The Cafeteria. @1
