@@ -1,0 +1,322 @@
+[
+    {
+        "question": "Which of the following bones is not in the leg?",
+        "answer": 2,
+        "options": [
+            "Fibula ",
+            "Radius",
+            "Tibia",
+            "Patella"
+        ]
+    },
+    {
+        "question": "Which of these bones is hardest to break?",
+        "answer": 1,
+        "options": [
+            "Femur",
+            "Tibia",
+            "Humerus",
+            "Cranium"
+        ]
+    },
+    {
+        "question": "How many objects are equivalent to one mole?",
+        "answer": 3,
+        "options": [
+            "6.002 x 10^22",
+            "6.002 x 10^23",
+            "6.022 x 10^23",
+            "6.022 x 10^22"
+        ]
+    },
+    {
+        "question": "What name is given to all baby marsupials?",
+        "answer": 2,
+        "options": [
+            "Cub",
+            "Joey",
+            "Calf",
+            "Pup"
+        ]
+    },
+    {
+        "question": "Rhinoplasty is a surgical procedure on what part of the human body?",
+        "answer": 1,
+        "options": [
+            "Nose",
+            "Neck",
+            "Chin",
+            "Ears"
+        ]
+    },
+    {
+        "question": "Which type of rock is created by intense heat AND pressure?",
+        "answer": 3,
+        "options": [
+            "Igneous",
+            "Diamond",
+            "Metamorphic",
+            "Sedimentary"
+        ]
+    },
+    {
+        "question": "What is the 'powerhouse'; of the Eukaryotic animal cell?",
+        "answer": 4,
+        "options": [
+            "Endoplasmic Reticulum",
+            "Chloroplast",
+            "Nucleus",
+            "Mitochondria"
+        ]
+    },
+    {
+        "question": "This element, when overcome with extreme heat and pressure, creates diamonds.",
+        "answer": 4,
+        "options": [
+            "Oxygen",
+            "Nitrogen",
+            "Hydrogen",
+            "Carbon"
+        ]
+    },
+    {
+        "question": "What is the elemental symbol for mercury?",
+        "answer": 4,
+        "options": [
+            "Mc",
+            "Hy",
+            "Me",
+            "Hg"
+        ]
+    },
+    {
+        "question": "How many planets are in our Solar System?",
+        "answer": 4,
+        "options": [
+            "Ten",
+            "Nine",
+            "Seven",
+            "Eight"
+        ]
+    },
+    {
+        "question": "What is the hottest planet in the Solar System?",
+        "answer": 3,
+        "options": [
+            "Mars",
+            "Mercury",
+            "Venus",
+            "Jupiter"
+        ]
+    },
+    {
+        "question": "What is the first element on the periodic table?",
+        "answer": 2,
+        "options": [
+            "Oxygen",
+            "Hydrogen",
+            "Lithium",
+            "Helium"
+        ]
+    },
+    {
+        "question": "Which gas forms about 78% of the Earth's atmosphere?",
+        "answer": 1,
+        "options": [
+            "Nitrogen",
+            "Argon",
+            "Oxygen",
+            "Carbon Dioxide"
+        ]
+    },
+    {
+        "question": "How many planets make up our Solar System?",
+        "answer": 1,
+        "options": [
+            "8",
+            "9",
+            "7",
+            "6"
+        ]
+    },
+    {
+        "question": "Which of the following blood vessels carries deoxygenated blood?",
+        "answer": 4,
+        "options": [
+            "Pulmonary Vein",
+            "Aorta",
+            "Coronary Artery",
+            "Pulmonary Artery"
+        ]
+    },
+    {
+        "question": "What is the chemical makeup of water?",
+        "answer": 4,
+        "options": [
+            "CO2",
+            "C12H6O2",
+            "H",
+            "H20"
+        ]
+    },
+    {
+        "question": "What is the primary addictive substance found in tobacco?",
+        "answer": 3,
+        "options": [
+            "Glaucine",
+            "Cathinone",
+            "Nicotine",
+            "Ephedrine"
+        ]
+    },
+    {
+        "question": "Alzheimer's disease primarily affects which part of the human body?",
+        "answer": 2,
+        "options": [
+            "Lungs",
+            "Brain",
+            "Skin",
+            "Heart"
+        ]
+    },
+    {
+        "question": "What was the name of the first artificial Earth satellite, launched by the Soviet Union in 1957?",
+        "answer": 1,
+        "options": [
+            "Sputnik 1",
+            "Soyuz 7K-OK",
+            "Zenit-2",
+            "Voskhod 3KV"
+        ]
+    },
+    {
+        "question": "How many bones are in the human body?",
+        "answer": 2,
+        "options": [
+            "200",
+            "206",
+            "209",
+            "203"
+        ]
+    },
+    {
+        "question": "Who is the chemical element Curium named after?",
+        "answer": 3,
+        "options": [
+            "Stephen Curry",
+            "Curious George",
+            "Marie &amp; Pierre Curie",
+            "The Curiosity Rover"
+        ]
+    },
+    {
+        "question": "The human heart has how many chambers?",
+        "answer": 1,
+        "options": [
+            "4",
+            "2",
+            "3",
+            "6"
+        ]
+    },
+    {
+        "question": "The element involved in making human blood red is which of the following?",
+        "answer": 1,
+        "options": [
+            "Iron",
+            "Iridium",
+            "Cobalt",
+            "Copper"
+        ]
+    },
+    {
+        "question": "The asteroid belt is located between which two planets?",
+        "answer": 2,
+        "options": [
+            "Mercury and Venus",
+            "Mars and Jupiter",
+            "Jupiter and Saturn",
+            "Earth and Mars"
+        ]
+    },
+    {
+        "question": "Human cells typically have how many copies of each gene?",
+        "answer": 4,
+        "options": [
+            "1",
+            "4",
+            "3",
+            "2"
+        ]
+    },
+    {
+        "question": "Which is the most abundant element in the universe?",
+        "answer": 1,
+        "options": [
+            "Hydrogen",
+            "Helium",
+            "Lithium",
+            "Oxygen"
+        ]
+    },
+    {
+        "question": "The medical term for the belly button is which of the following?",
+        "answer": 2,
+        "options": [
+            "Paxillus",
+            "Umbilicus",
+            "Nevus",
+            "Nares"
+        ]
+    },
+    {
+        "question": "The biggest distinction between a eukaryotic cell and a prokaryotic cell is:",
+        "answer": 3,
+        "options": [
+            "The mode of reproduction",
+            "The overall size",
+            "The presence or absence of a nucleus",
+            "The presence or absence of certain organelles"
+        ]
+    },
+    {
+        "question": "Which element has the highest melting point?",
+        "answer": 1,
+        "options": [
+            "Carbon",
+            "Platinum",
+            "Osmium",
+            "Tungsten"
+        ]
+    },
+    {
+        "question": "What is the standard atomic weight of a Plutonium nucleus?",
+        "answer": 1,
+        "options": [
+            "244",
+            "94",
+            "481",
+            "128"
+        ]
+    },
+    {
+        "question": "71% of the Earth's surface is made up of",
+        "answer": 1,
+        "options": [
+            "Water",
+            "Deserts",
+            "Forests",
+            "Continents"
+        ]
+    },
+    {
+        "question": "What animal takes part in Schrodinger's most famous thought experiment?",
+        "answer": 3,
+        "options": [
+            "Butterfly",
+            "Bat",
+            "Cat",
+            "Dog"
+        ]
+    }
+]

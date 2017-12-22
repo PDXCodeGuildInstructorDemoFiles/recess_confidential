@@ -1,0 +1,354 @@
+{
+    "response_code": 0,
+    "results": [{
+      "category": "Entertainment: Video Games",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "League of Legends, DOTA 2, Smite and Heroes of the Storm are all part of which game genre?",
+      "correct_answer": "Multiplayer Online Battle Arena (MOBA)",
+      "incorrect_answers": ["Real Time Strategy (RTS)", "First Person Shooter (FPS)", "Role Playing Game (RPG)"]
+    }, {
+      "category": "Entertainment: Video Games",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "The most graphically violent game to precede the creation of the ESRB (Entertainment Software Rating Board) was...",
+      "correct_answer": "Mortal Kombat",
+      "incorrect_answers": ["Duke Nukem", "Resident Evil", "Doom"]
+    }, {
+      "category": "Entertainment: Video Games",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "What was the name of the cancelled sequel of Team Fortress?",
+      "correct_answer": "Team Fortress 2: Brotherhood of Arms",
+      "incorrect_answers": ["Team Fortress 2: Desert Mercenaries", "Team Fortress 2: Operation Gear Grinder", "Team Fortress 2: Return to Classic"]
+    }, {
+      "category": "Entertainment: Video Games",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "Which of these is NOT a player class in Team Fortress 2?",
+      "correct_answer": "Healer",
+      "incorrect_answers": ["Demoman", "Pyro", "Spy"]
+    }, {
+      "category": "Entertainment: Video Games",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "Who is the writer of the game &quot;Half-Life&quot;?",
+      "correct_answer": "Marc Laidlaw",
+      "incorrect_answers": ["Gabe Newell", "Robin Walker", "Chet Faliszek"]
+    }, {
+      "category": "Entertainment: Video Games",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "Pok&eacute;mon Go is a location-based augmented reality game developed and published by which company?",
+      "correct_answer": "Niantic",
+      "incorrect_answers": ["Rovio", "Zynga", "Supercell"]
+    }, {
+      "category": "Entertainment: Video Games",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "In the fighting game &quot;Skullgirls,&quot; which character utilizes a folding chair called the &quot;Hurting&quot; as a weapon?",
+      "correct_answer": "Beowulf",
+      "incorrect_answers": ["Big Band", "Squigly", "Cerebella"]
+    }, {
+      "category": "Entertainment: Video Games",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "How many Chaos Emeralds are there in the &quot;Sonic the Hedgehog&quot; universe?",
+      "correct_answer": "7",
+      "incorrect_answers": ["6", "8", "14"]
+    }, {
+      "category": "Entertainment: Video Games",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "In the 2002 video game &quot;Kingdom Hearts&quot;, how many Keyblades are usable?",
+      "correct_answer": "18",
+      "incorrect_answers": ["13", "16", "15"]
+    }, {
+      "category": "Entertainment: Video Games",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "What is the title of song on the main menu in Halo?",
+      "correct_answer": "Halo",
+      "incorrect_answers": ["Opening Suite", "Shadows", "Suite Autumn"]
+    }, {
+      "category": "Entertainment: Video Games",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "Which of these is NOT the name of a rival gang in the video game Saint&#039;s Row 2?",
+      "correct_answer": "The Zin Empire",
+      "incorrect_answers": ["The Brotherhood", "The Ronin", "The Sons of Samedi"]
+    }, {
+      "category": "Entertainment: Video Games",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "Which of these Starbound races has a Wild West culture?",
+      "correct_answer": "Novakid",
+      "incorrect_answers": ["Avian", "Human", "Hylotl"]
+    }, {
+      "category": "Entertainment: Video Games",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "In the first game of the Sly Cooper franchise, what family heirloom did Sly Cooper want to steal back?",
+      "correct_answer": "Thievius Raccoonus",
+      "incorrect_answers": ["Raccoon Training 101", "The Art of Sneak", "Raccoonus Teachus"]
+    }, {
+      "category": "Entertainment: Video Games",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "In Portal 2, how did CEO of Aperture Science, Cave Johnson, presumably die?",
+      "correct_answer": "Moon Rock Poisoning",
+      "incorrect_answers": ["Accidentally sending a portal to the Moon", "Slipped in the shower", "Asbestos Poisoning"]
+    }, {
+      "category": "Entertainment: Video Games",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "Which Mario spin-off game did Waluigi make his debut?",
+      "correct_answer": "Mario Tennis",
+      "incorrect_answers": ["Mario Party 3", "Mario Kart: Double Dash!!", "Mario Golf: Toadstool Tour"]
+    }, {
+      "category": "Entertainment: Video Games",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "Who is the founder of Team Fortress 2&#039;s fictional company &quot;Mann Co&quot;?",
+      "correct_answer": "Zepheniah Mann",
+      "incorrect_answers": ["Cave Johnson", "Wallace Breem", "Saxton Hale"]
+    }, {
+      "category": "Entertainment: Video Games",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "In the game &quot;Overwatch,&quot; what are the names of the two Australian criminals from the Junkers faction?",
+      "correct_answer": "Junkrat and Roadhog",
+      "incorrect_answers": ["Roadrat and Junkhog", "Ana and Pharah", "McCree and Deadeye"]
+    }, {
+      "category": "Entertainment: Video Games",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "Who is the creator of the Super Smash Bros. Series?",
+      "correct_answer": "Masahiro Sakurai",
+      "incorrect_answers": ["Reggie Fils-Aim&eacute;", "Bill Trinen", "Hideo Kojima"]
+    }, {
+      "category": "Entertainment: Video Games",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "What year did the game &quot;Overwatch&quot; enter closed beta?",
+      "correct_answer": "2015",
+      "incorrect_answers": ["2013", "2011", "2016"]
+    }, {
+      "category": "Entertainment: Video Games",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "Gordon Freeman is said to have burnt and destroyed what food in the break room microwave?",
+      "correct_answer": "Casserole",
+      "incorrect_answers": ["Sub Sandwich", "Chicken Soup", "Pepperoni Pizza"]
+    }, {
+      "category": "Entertainment: Video Games",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "Which of these characters is the mascot of the video game company SEGA?",
+      "correct_answer": "Sonic the Hedgehog",
+      "incorrect_answers": ["Dynamite Headdy", "Alex Kidd", "Opa-Opa"]
+    }, {
+      "category": "Entertainment: Video Games",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "What was Frank West&#039;s job in &quot;Dead Rising&quot;?",
+      "correct_answer": "Photojournalist",
+      "incorrect_answers": ["Janitor", "Chef", "Taxi Driver"]
+    }, {
+      "category": "Entertainment: Video Games",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "The &quot;Day of Defeat&quot; series of games take place during which war?",
+      "correct_answer": "World War II",
+      "incorrect_answers": ["World War I", "Vietnam War", "Iraq War"]
+    }, {
+      "category": "Entertainment: Video Games",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "In Overwatch, Mercy&#039;s ultimate ability is..",
+      "correct_answer": "Resurrect",
+      "incorrect_answers": ["Earthshatter", "Rocket Barrage", "Molten Core"]
+    }, {
+      "category": "Entertainment: Video Games",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "In &quot;Fallout 4&quot; which faction is not present in the game?",
+      "correct_answer": "The Enclave",
+      "incorrect_answers": ["The Minutemen", "The Brotherhood of Steel", "The Institute"]
+    }, {
+      "category": "Entertainment: Video Games",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "Which of these is NOT a Humongous Entertainment game franchise?",
+      "correct_answer": "Commander Keen",
+      "incorrect_answers": ["Pajama Sam", "Putt-Putt", "Freddi Fish"]
+    }, {
+      "category": "Entertainment: Video Games",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "In vanilla Minecraft, which of the following cannot be made into a block?",
+      "correct_answer": "Charcoal",
+      "incorrect_answers": ["Coal", "Wheat", "String"]
+    }, {
+      "category": "Entertainment: Video Games",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "Who is the leader of Team Valor in Pok&eacute;mon Go?",
+      "correct_answer": "Candela",
+      "incorrect_answers": ["Willow", "Blanche", "Spark"]
+    }, {
+      "category": "Entertainment: Video Games",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "Who is the leader of Team Mystic in Pok&eacute;mon Go?",
+      "correct_answer": "Blanche",
+      "incorrect_answers": ["Candela", "Spark", "Willow"]
+    }, {
+      "category": "Entertainment: Video Games",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "Which of the following is NOT a summon in the game &quot;South Park: The Stick of Truth&quot;?",
+      "correct_answer": "Towelie",
+      "incorrect_answers": ["Jesus", "Mr. Hankey", "Mr. Slave"]
+    }, {
+      "category": "Entertainment: Video Games",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "In the videogame Bully, what is the protagonist&#039;s last name?",
+      "correct_answer": "Hopkins",
+      "incorrect_answers": ["Smith", "Kowalski", "Crabblesnitch"]
+    }, {
+      "category": "Entertainment: Video Games",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "What video game sparked controversy because of its hidden &quot;Hot Coffee&quot; minigame?",
+      "correct_answer": "Grand Theft Auto: San Andreas",
+      "incorrect_answers": ["Grand Theft Auto: Vice City", "Hitman: Blood Money", "Cooking Mama"]
+    }, {
+      "category": "Entertainment: Video Games",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "In the game Nuclear Throne, what character is only usable in a play through with Melting?",
+      "correct_answer": "Skeleton",
+      "incorrect_answers": ["Frog", "Horror", "Plant"]
+    }, {
+      "category": "Entertainment: Video Games",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "In the game Battleblock Theater, what was the name of the voice actor who voiced the narrator?",
+      "correct_answer": "Will Stamper",
+      "incorrect_answers": ["Steve Blum", "Richard Epcar", "Yuri Lowenthal"]
+    }, {
+      "category": "Entertainment: Video Games",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "Which of the following was NOT a playable character in the game Kingdom Hearts: Birth by Sleep?",
+      "correct_answer": "Ignis",
+      "incorrect_answers": ["Ventus", "Terra", "Aqua"]
+    }, {
+      "category": "Entertainment: Video Games",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "Which water-type Pok&eacute;mon starter was introduced in the 4th generation of the series?",
+      "correct_answer": "Piplup",
+      "incorrect_answers": ["Totodile", "Oshawott", "Mudkip"]
+    }, {
+      "category": "Entertainment: Video Games",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "In the video game &quot;Team Fortress 2&quot;, which class is able to double jump?",
+      "correct_answer": "Scout",
+      "incorrect_answers": ["Spy", "Engineer", "Pyro"]
+    }, {
+      "category": "Entertainment: Video Games",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "What is the maximum HP in Terraria?",
+      "correct_answer": "500",
+      "incorrect_answers": ["400", "1000", "100"]
+    }, {
+      "category": "Entertainment: Video Games",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "What is the name of the largest planet in Kerbal Space Program?",
+      "correct_answer": "Jool",
+      "incorrect_answers": ["Eeloo", "Kerbol", "Minmus"]
+    }, {
+      "category": "Entertainment: Video Games",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "Which of the following characters from the game &quot;Overwatch&quot; was revealed to be homosexual in December of 2016?",
+      "correct_answer": "Tracer",
+      "incorrect_answers": ["Widowmaker", "Sombra", "Symmetra"]
+    }, {
+      "category": "Entertainment: Video Games",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "In Minecraft, which two items must be combined to craft a torch?",
+      "correct_answer": "Stick and Coal",
+      "incorrect_answers": ["Stick and Fire", "Wood and Coal", "Wood and Fire"]
+    }, {
+      "category": "Entertainment: Video Games",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "When was Left 4 Dead 2 released?",
+      "correct_answer": "November 17, 2009",
+      "incorrect_answers": ["May 3, 2008", "November 30, 2009", "June 30, 2010"]
+    }, {
+      "category": "Entertainment: Video Games",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "&quot;Minecraft&quot; was released from beta in 2011 during a convention held in which city?",
+      "correct_answer": "Las Vegas",
+      "incorrect_answers": ["Paris", "Bellevue", "London"]
+    }, {
+      "category": "Entertainment: Video Games",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "Which Kirby game first introduced Copy Abilities?",
+      "correct_answer": "Kirby&#039;s Adventure",
+      "incorrect_answers": ["Kirby Super Star", "Kirby&#039;s Dream Land 2", "Kirby&#039;s Dream Land"]
+    }, {
+      "category": "Entertainment: Video Games",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "Who created the indie adventure game &quot;Night in the Woods&quot;?",
+      "correct_answer": "Alec Holowka",
+      "incorrect_answers": ["Ron Gilbert", "Tim Schafer", " Tommy Refenes"]
+    }, {
+      "category": "Entertainment: Video Games",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "What is the boss round featured in the &quot;Call Of Duty: Zombies&quot; map &quot;Five&quot;?",
+      "correct_answer": "The Pentagon Thief",
+      "incorrect_answers": ["Hellhounds", "Jumping Jacks", "Napalm Zombie"]
+    }, {
+      "category": "Entertainment: Video Games",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "In which year was League of Legends released?",
+      "correct_answer": "2009",
+      "incorrect_answers": ["2010", "2003", "2001"]
+    }, {
+      "category": "Entertainment: Video Games",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "What were the first two blocks in &quot;Minecraft&quot;?",
+      "correct_answer": "Grass and Cobblestone",
+      "incorrect_answers": ["Grass and Stone", "Crafting Table and Cobblestone", "Cobblestone and Stone"]
+    }, {
+      "category": "Entertainment: Video Games",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "Who created the &quot;Metal Gear&quot; Series?",
+      "correct_answer": "Hideo Kojima",
+      "incorrect_answers": ["Hiroshi Yamauchi", "Shigeru Miyamoto", "Gunpei Yokoi"]
+    }, {
+      "category": "Entertainment: Video Games",
+      "type": "multiple",
+      "difficulty": "easy",
+      "question": "In the Super Smash Bros. series, which character was the first one to return to the series after being absent from a previous game?",
+      "correct_answer": "Dr. Mario",
+      "incorrect_answers": ["Mewtwo", "Lucas", "Roy"]
+    }]
+  }
