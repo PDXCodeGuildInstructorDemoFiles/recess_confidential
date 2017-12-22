@@ -1,10 +1,14 @@
 # modules
 from noir_items import Item
 from noir_rooms import Room
-from character import Character, NPC, Player
+from notebook import Notebook
+import character
+import trivia
+from notebook import Notebook
 import csv
 import os
 import urllib
+import npc_list
 
 # global vars
 notebook = []
@@ -46,12 +50,12 @@ def log_data():
                 continue
 
 # Play music function
-def play_music():
-    from pygame import mixer # Load the required library
+# def play_music():
+#     from pygame import mixer # Load the required library
 
-    mixer.init()
-    mixer.music.load('panther.mp3')
-    mixer.music.play()
+#     mixer.init()
+#     mixer.music.load('panther.mp3')
+#     mixer.music.play()
 
 # Converts string of "True" to Boolean of <True>
 def boolean_check(str_bool):
@@ -118,6 +122,7 @@ def navigation():
             back_to_room = charlocation
             charlocation = charlocation.connects_to[user]
             navigation()
+
     # Checks to see if user is in small room (i.e. POIs)
     elif charlocation.size == "0":
         print("\n\nAt {}, you see: ".format(charlocation.name))
@@ -127,7 +132,7 @@ def navigation():
         print("")
         print("\n[R]eturn to {})".format(back_to_room))
 
-        user = input("What would you like to do?")
+        user = input("What would you like to do?: ")
 
         if user == 'r':
             charlocation = back_to_room
@@ -135,20 +140,22 @@ def navigation():
         elif user == 'm':
             menu()
         else:
+            print("Trying to run NPC")
             user = int(user)
             back_to_room = charlocation
             if find_class(charlocation.inventory[user]) == "Item":
                 print("Item was chosen")
-                p_note.write(charlocation.inventory[user])
-            elif find_class(charlocation.inventory[user]) == "NPC":
+                # p_note.write(charlocation.inventory[user])
+            elif find_class(charlocation.inventory[user]) == "NpcEssential":
                 print("NPC was chosen")
                 print("<Insert NPC code commands here>")
-                if charlocation.inventory[user].essential
+                if find_class(charlocation.inventory[user]) == "NpcEssential":
+
+                    q = input(charlocation.inventory[user].talk()).lower()  # mini-game offer
                     if q == 'y':
-                        print('TRIVIA GAME')  # here we would run the mini-game module.
-                        reward = 1  # this would be returned by the mini-game
-                        charlocation.inventory[user].conclude(reward)  # prize or no prize
-                        player.notebook.write(charlocation.inventory[user].give())
+                        reward = charlocation.inventory[user].mini_game(charlocation.inventory[user].gameparam)  # this would be returned by the mini-game
+                        charlocation.inventory[user].conclude(reward) # prize or no prize
+                        # player.notebook.write(charlocation.inventory[user].give())
                     else:
                         print('Ok, see you later.')  # chose not to play
                 else:
@@ -177,26 +184,75 @@ def menu():
 if __name__ == '__main__':
     game = True
 
-    interactions = {
-        'Mrs. Frizzle': {'game_offer': 'Would you like to play trivia? ', 'conclusion': 'Ok, here\'s the key.'}}
+    player = character.Player("TBD","description")
 
-    science_teacher = NPC('Mrs. Frizzle', 'Frazzled', interactions)
+    interactions_essential = {
+        'Jeremy': {
+            'game_offer': 'PLAYER: Hey, Jeremy. Do you know who stole the gerbil?\nJEREMY: I do! I will tell you if you beat me at Tic-Tac-Toe.\n\tWould you like to play Tic-Tac-Toe?(y/n): ',
+            'conclusion': 'JEREMY: Congratulations! I saw Lucy open the cage but I don\'t know why.'},
+        'Ms. Frizzle': {
+            'game_offer': 'PLAYER: Hello Mrs. Frizzle. Could I have a hall pass?\nMRS. FRIZZLE: Sure. I will write you one if you pass this quiz I wrote.\nWould you like to try it out?(y/n): ',
+            'conclusion': 'Congratulations! Here\'s your hall pass.'},
+        'Red McGuffin': {
+            'game_offer': 'PLAYER: Hi Red, you\'re on the Gerbil Crew right? Do you know who else access to the gerbil cage?\nRED McGUFFIN: Yup. But I\'ll only tell you if you beat me at blackjack. Wanna play?(y/n): ',
+            'conclusion': 'That was a good hand. Here\'s a list of the rest of the people on the crew. They all have keys to the cage.'}
+    }
+
+    interactions_nonessential = {
+        'Adam Jacobs': 'PLAYER: Hi Adam, do you know who took the gerbil?\nADAM: Uh, no?',
+        'Bryce Balin': 'PLAYER: Hi Bryce, do you know who took the gerbil?\nADAM: Uh, no?',
+        'Becky Barnett': 'PLAYER: Hi Becky, do you know who took the gerbil?\nADAM: Uh, no?',
+        'Jered Kropholler': 'PLAYER: Hi Jered, do you know who took the gerbil?\nADAM: Uh, no?',
+        'Tanner Laramie': 'PLAYER: Hi Tanner, do you know who took the gerbil?\nADAM: Uh, no?',
+        'Jessica Nathenson': 'PLAYER: Hi Jessica, do you know who took the gerbil?\nADAM: Uh, no?',
+        'Judy Wrench': 'PLAYER: Hi Judy, do you know who took the gerbil?\nADAM: Uh, no?',
+        'Lucy Zastophil': 'You walk over to Lucy Zastophil and see that she is wearing a tie-dyed shirt which has the word “PETA” on the front.\nPLAYER: Hello, Lucy. Did you take the gerbil?\nLUCY: Fur is murder you facist.\nPLAYER: So the quickest way out of here is the way I came right?\nYou leave'
+    }
+
+
+
+    
+    # ms_frizzle = character.NpcEssential(
+    #     'Ms. Frizzle',
+    #     'Middle aged science teacher',
+    #     interactions_essential,
+    #     mini_game=trivia.trivia_game,
+    # )
+
+    # jeremy = character.NpcEssential(
+    #     'Jeremy',
+    #     'Tic-Tac-Toe Student',
+    #     'interactions_essential',
+    #     mini_game='',
+    #     inventory=[]
+    # )
+    #
+    # red_mcguffin = character.NpcEssential(
+    #     'red_mcguffin',
+    #     'blackjack student Student',
+    #     'interactions_essential',
+    #     mini_game=black_jack_func.black_jack('player_name'),
+    #     inventory=[]
+    # )
+
 
     # print(find_class(science_teacher))
     # q = input(science_teacher.talk()).lower()  # mini-game offer
 
     log_data()
     charlocation = hallway[-1]
-    play_music()
+    # play_music()
     back_to_room = []
 
-    hallway[2].connects_to[0].inventory.append(science_teacher)
+    hallway[2].connects_to[0].inventory.append(npc_list.ms_frizzle)
+    hallway[0].connects_to[0].inventory.append(npc_list.red_mcguffin)
 
     # runs game
     while game == True:
         os.system('cls' if os.name == 'nt' else 'clear')
         game_start()
 
+        print(npc_list.ms_frizzle.interactions)
         # start or quit select
         user = input("Would you like to:\n" \
                                     "(S)tart a game\n" \
