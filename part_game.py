@@ -11,13 +11,6 @@ import urllib
 import npc_list
 from pygame import mixer # Load the required library for music (pip3 install pygame)
 
-# global vars
-notebook = []
-locations_list = []
-items = []
-characters = []
-
-
 # Collects data from Data.csv and creates variables
 def log_data():
     with open('data.csv') as csvfile:
@@ -82,7 +75,6 @@ def start_dialogue():
     print("Your are in the hallway. \nYou hear a scream and a bloody head rolls out of a classroom. \n")
     input("\n\n\n[PRESS ANY KEY]")
 
-
 # Menu interface with Navigating rooms
 def navigation():
     os.system('cls' if os.name == 'nt' else 'clear')
@@ -121,7 +113,7 @@ def navigation():
             print("In {} room you can explore:\n".format(charlocation.name))
 
             for i in range(len(charlocation.connects_to)):
-                print("[{}] {}".format(i, charlocation.connects_to[i]))
+                print("[{}] {}".format(i+1, charlocation.connects_to[i]))
 
             print("\n[R]eturn to Hallway")
             print("[M]enu")
@@ -134,7 +126,7 @@ def navigation():
             elif q == 'm':
                 menu()
             else:
-                q = int(q)
+                q = int(q) - 1
                 back_to_room = charlocation
                 charlocation = charlocation.connects_to[q]
                 navigation()
@@ -143,7 +135,7 @@ def navigation():
         elif charlocation.size == "0":
             print("\n\nAt {}, you see: ".format(charlocation.name))
             for i in range(len(charlocation.inventory)):
-                print("[{}] {}".format(i, charlocation.inventory[i]))
+                print("[{}] {}".format(i+1, charlocation.inventory[i]))
 
             print("")
             print("\n[R]eturn to {}".format(back_to_room))
@@ -158,23 +150,24 @@ def navigation():
             elif q == 'm':
                 menu()
             else:
-                q = int(q)
+                q = int(q) - 1
                 if find_class(charlocation.inventory[q]) == "Item":
                     # changes variable to choice_item for clarity
                     choice_item = charlocation.inventory[q]
-                    print("Item was chosen {}".format(choice_item))
+                    print("\n")
                     p_note.write(choice_item)
                     charlocation.inventory.remove(choice_item)
-                elif find_class(charlocation.inventory[q]) == "NpcEssential":
+                elif find_class(charlocation.inventory[q]) == "NpcEssential" or find_class(charlocation.inventory[q]) == "NPCNonEssential":
                     # changes variable to choice_npc for clarity
                     choice_npc = charlocation.inventory[q]
-                    print("NPC was chosen")
+                    print("\n")
                     if find_class(choice_npc) == "NpcEssential":
                         q = input(choice_npc.talk()).lower()  # mini-game offer
                         if q == 'y':
                             reward = choice_npc.mini_game(choice_npc.gameparam)  # this would be returned by the mini-game
                             choice_npc.conclude(reward)  # prize or no prize
-                            player.notebook.write(choice_npc.give())
+                            if reward > 0:
+                                p_note.write(choice_npc.give())
                         else:
                             print('Ok, see you later.')  # chose not to play
                     else:
@@ -218,7 +211,7 @@ def score_check():
     if p_note.points_total() > 15:
         # Win_condition is a placeholder...replace this with other story related code later
         win_condition()
-    elif 15 > p_note.points_total() > 5:
+    elif 15 >= p_note.points_total() > 8:
         # placeholder to add thoughts to notebook or add npcs
         print("You are doing ggggggrrrrrrreeeeeat. You think you might know who did it")
         input("")
@@ -232,17 +225,24 @@ def win_condition():
 if __name__ == '__main__':
     game = True
 
-    # Imports data and substantiates objects
+    # Imports data, creates global vars, and substantiates objects
+    notebook = []
+    locations_list = []
+    items = []
+    characters = []
+
     log_data()
     player = character.Player("Conan", "This is you. You are it!")
     charlocation = locations_list[-1]
+    back_to_room = []
     p_note = Notebook()
     # Appends NPC to small rooms
+    clue01 = Item("Red's ultimate clue","Red heard that the girl took care of the gerbil last week",False,False,"sketch PETA girl",4)
+    clue02 = Item("Ms Frizzle ultimate clue","Bad student kid thing is allergic yo",False,False,"not bad dude",6)
+    npc_list.red_mcguffin.inventory.append(clue01)
+    npc_list.ms_frizzle.inventory.append(clue02)
     locations_list[2].connects_to[0].inventory.append(npc_list.ms_frizzle)
-    locations_list[0].connects_to[0].inventory.append(npc_list.red_mcguffin)
-
-    # play_music()
-    back_to_room = []
+    locations_list[0].connects_to[1].inventory.append(npc_list.red_mcguffin)
 
     # runs game
     while game:
@@ -259,11 +259,10 @@ if __name__ == '__main__':
         if q == 's':
             os.system('cls' if os.name == 'nt' else 'clear')
             start = True
-
             start_dialogue()
 
             # loop for continued action select
-            while start == True:
+            while start:
                 os.system('cls' if os.name == 'nt' else 'clear')
                 print("")
                 menu()
