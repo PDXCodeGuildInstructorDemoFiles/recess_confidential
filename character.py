@@ -44,7 +44,6 @@ class NpcEssential(Character):
         return self.inventory.pop()
 
 
-
 class NpcNonEssential(Character):
     def __init__(self, name, description, interactions):
         Character.__init__(self, name, description)
