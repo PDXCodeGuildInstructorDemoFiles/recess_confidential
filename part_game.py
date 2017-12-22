@@ -84,7 +84,7 @@ def start_dialogue():
     print("in the classroom by the end of recess. If you fail, everyone in the class will get detention.\n")
     print("If you succeed, only the guilty party will get detention. If you do extremely well, everyone\n")
     print("will get a pizza party (with the exception of the guilty party).")
-    input("\n\n\n[PRESS ANY KEY]")"
+    input("\n\n\n[PRESS ANY KEY]")
 # Menu interface with Navigating rooms
 def navigation():
     os.system('cls' if os.name == 'nt' else 'clear')
