@@ -23,6 +23,7 @@ def TicTacToe(player_name):
             print('Do you want to be X or O?')
             letter = input().upper()
 
+clear
         if letter == 'X':
             return ['X', 'O']
         else:
@@ -122,9 +123,9 @@ def TicTacToe(player_name):
     print('Intro dialogue')
 
     is_playing = True
-    turn = 'player'
 
     while is_playing:
+        turn = 'player'
         if turn == 'player':
             draw_board(get_board)
             move = player_move(get_board)
@@ -161,7 +162,3 @@ def TicTacToe(player_name):
                     turn = 'player'
         if not play_again():
             break
-
-game = TicTacToe('player')
-
-print(game)
