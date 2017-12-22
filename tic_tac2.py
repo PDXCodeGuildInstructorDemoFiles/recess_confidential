@@ -2,6 +2,7 @@
 # Tic Tac Toe
 import random
 
+
 def draw_board(board):
     print('   |   |')
     print(' ' + board[7] + ' | ' + board[8] + ' | ' + board[9])
@@ -15,36 +16,39 @@ def draw_board(board):
     print(' ' + board[1] + ' | ' + board[2] + ' | ' + board[3])
     print('   |   |')
 
+
 def player_letter():
     letter = ''
     while not (letter == 'X' or letter == 'O'):
         print('Do you want to be X or O?')
         letter = input().upper()
 
-
     if letter == 'X':
         return ['X', 'O']
     else:
         return ['O', 'X']
 
-def play_again():
 
-     print('Do you want to play again? (yes or no)')
-     return input().lower().startswith('y')
+def play_again():
+    print('Do you want to play again? (yes or no)')
+    return input().lower().startswith('y')
+
 
 def make_move(board, letter, move):
-     board[move] = letter
+    board[move] = letter
+
 
 def is_winner(bo, le):
+    return ((bo[7] == le and bo[8] == le and bo[9] == le) or  # across the top
+            (bo[4] == le and bo[5] == le and bo[6] == le) or  # across the middle
+            (bo[1] == le and bo[2] == le and bo[3] == le) or  # across the bottom
+            (bo[7] == le and bo[4] == le and bo[1] == le) or  # down the left side
+            (bo[8] == le and bo[5] == le and bo[2] == le) or  # down the middle
+            # down the right side
+            (bo[9] == le and bo[6] == le and bo[3] == le) or
+            (bo[7] == le and bo[5] == le and bo[3] == le) or  # diagonal
+            (bo[9] == le and bo[5] == le and bo[1] == le))  # diagonal
 
-    return ((bo[7] == le and bo[8] == le and bo[9] == le) or # across the top
-    (bo[4] == le and bo[5] == le and bo[6] == le) or # across the middle
-    (bo[1] == le and bo[2] == le and bo[3] == le) or # across the bottom
-    (bo[7] == le and bo[4] == le and bo[1] == le) or # down the left side
-    (bo[8] == le and bo[5] == le and bo[2] == le) or # down the middle
-    (bo[9] == le and bo[6] == le and bo[3] == le) or # down the right side
-    (bo[7] == le and bo[5] == le and bo[3] == le) or # diagonal
-    (bo[9] == le and bo[5] == le and bo[1] == le)) # diagonal
 
 def get_board(board):
     dupe_board = []
@@ -53,8 +57,10 @@ def get_board(board):
         dupe_board.append(i)
     return dupe_board
 
+
 def is_spacefree(board, move):
     return board[move] == ' '
+
 
 def player_move(board):
     move = ' '
@@ -62,6 +68,7 @@ def player_move(board):
         print('What is your next move? (1-9)')
         move = input()
     return int(move)
+
 
 def c_movelist(board, movesList):
     possible_moves = []
@@ -73,6 +80,7 @@ def c_movelist(board, movesList):
         return random.choice(possible_moves)
     else:
         return None
+
 
 def c_move(board, c_letter):
     if c_letter == 'X':
@@ -87,13 +95,12 @@ def c_move(board, c_letter):
             if is_winner(copy, c_letter):
                 return i
 
-
     for i in range(1, 10):
         copy = get_board(board)
     if is_spacefree(copy, i):
-            make_move(copy, player_letter, i)
-            if is_winner(copy, player_letter):
-                return i
+        make_move(copy, player_letter, i)
+        if is_winner(copy, player_letter):
+            return i
 
     move = c_movelist(board, [1, 3, 7, 9])
     if move != None:
@@ -104,13 +111,15 @@ def c_move(board, c_letter):
 
     return c_movelist(board, [2, 4, 6, 8])
 
+
 def is_boardfull(board):
     for i in range(1, 10):
         if is_spacefree(board, i):
             return False
     return True
 
-print('Welcome to Tic Tac Toe!')
+
+print('Intro dialogue')
 
 while True:
     the_board = [' '] * 10
@@ -127,9 +136,9 @@ while True:
 
             if is_winner(the_board, player_letter):
                 draw_board(the_board)
-                print('Hooray! You have won the game!')
+                print('NPC loss dialogue.')
                 is_playing = False
-                is_winner = True
+
             else:
                 if is_boardfull(the_board):
                     draw_board(the_board)
@@ -144,7 +153,7 @@ while True:
 
             if is_winner(the_board, c_letter):
                 draw_board(the_board)
-                print('The computer has beaten you! You lose.')
+                print('Player loss dialogue.')
                 is_playing = False
             else:
                 if is_boardfull(the_board):
