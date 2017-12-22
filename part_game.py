@@ -73,10 +73,18 @@ def game_start():
 
 # Opening story dialogue
 def start_dialogue():
-    print("It was a sunny afternoon at Central Elementary School.\n")
-    print("Your are in the hallway. \nYou hear a scream and a bloody head rolls out of a classroom. \n")
-    input("\n\n\n[PRESS ANY KEY]")
-
+    print("You are a fourth grade student standing in your Elementary School Hallway during recess.\n")
+    print("Just before you were released for recess, your teacher announced that the class gerbil\n")
+    print("had gone missing. She was extremely upset by this and threatened the class with detention\n")
+    print("for the rest of the week if no one came forward to confess. The bell rang before anyone\n")
+    print("could speak, so everyone ran out to the playground. You joined them in the initial sprint\n")
+    print("but as you ran out you noticed that no one else seemed to take the situation seriously,\n")
+    print("so you take it upon yourself to solve this untimely crime. You need to find out who\n")
+    print("who committed the crime, why he or she did it, and bring that information to your teacher\n")
+    print("in the classroom by the end of recess. If you fail, everyone in the class will get detention.\n")
+    print("If you succeed, only the guilty party will get detention. If you do extremely well, everyone\n")
+    print("will get a pizza party (with the exception of the guilty party).")
+    input("\n\n\n[PRESS ANY KEY]")"
 # Menu interface with Navigating rooms
 def navigation():
     os.system('cls' if os.name == 'nt' else 'clear')
@@ -112,7 +120,7 @@ def navigation():
         # Checks to see if user is in big rooms (i.e. cafeteria, nurses room,science lab, etc)
         elif charlocation.size == "1" and not charlocation.name == "Hallway":
             print(charlocation.description)
-            print("In {} room you can explore:\n".format(charlocation.name))
+            print("\nIn the {} room you can explore:\n".format(charlocation.name))
 
             for i in range(len(charlocation.connects_to)):
                 print("[{}] {}".format(i+1, charlocation.connects_to[i]))
@@ -135,6 +143,7 @@ def navigation():
 
         # Checks to see if user is in small room (i.e. POIs)
         elif charlocation.size == "0":
+            print(charlocation.description)
             print("\n\nAt {}, you see: ".format(charlocation.name))
             for i in range(len(charlocation.inventory)):
                 print("[{}] {}".format(i+1, charlocation.inventory[i]))
@@ -156,6 +165,9 @@ def navigation():
                 if find_class(charlocation.inventory[q]) == "Item":
                     # changes variable to choice_item for clarity
                     choice_item = charlocation.inventory[q]
+                    print("You examine the item:\n")
+                    print(choice_item.description)
+                    input("")
                     print("\n")
                     p_note.write(choice_item)
                     charlocation.inventory.remove(choice_item)
@@ -246,7 +258,7 @@ if __name__ == '__main__':
     npc_list.red_mcguffin.inventory.append(clue01)
     npc_list.ms_frizzle.inventory.append(clue02)
     locations_list[2].connects_to[0].inventory.append(npc_list.ms_frizzle)
-    locations_list[0].connects_to[1].inventory.append(npc_list.red_mcguffin)
+    locations_list[3].connects_to[0].inventory.append(npc_list.red_mcguffin)
 
     # runs game
     while game:

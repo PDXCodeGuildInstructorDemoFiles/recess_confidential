@@ -1,26 +1,38 @@
-item@Hair pin@This is what we put on hair@True@True@I found a suspicious hairpin@2
-item@allergy list@These students are allergic to gerbils:<list_students>@True@True@Some students are allergic@2
-small_room@Lunch Table@There is a half eaten slice of pizza on the table@0
-small_room@Black Jack Table@There are a lot of kids playing blackjack@0
-big_room@Cafeteria@You enter the cafeteria. There are a lot of students waiting in the food line. There are students eating at the tables. nYou see a group of students playing a card game at a table.@1
-small_room@Medicine Cabinet@This is a medicine cabinet. You see white powder inside. Snort it.@0
-small_room@The Chair@Someone has recently been killed here.@0
-big_room@Nurse's Office@This is a clean room full of bandaids and tums@1
-item@broken beaker@The beaker appears to have been knocked of the table@False@True@Broken beaker glass@0
-small_room@Beakers@beep beep@0
-small_room@Sink@Everything is blue@0
-big_room@Science Lab@A good place for Blue Sky and some hard candy.@1
-small_room@Coffee Machine@covfefe lots of covfefe@0
-big_room@Teacher's Lounge@Place where teacher's hide from students@1
-item@jock strap@ You discover amongst the rubbage a disgusting jock strap@False@True@digusting jock strap@0
-small_room@bleachers@A set of flithy bleachers from last night's game@0
-big_room@Gym@As you walk into the gym you are immediately hit by the smell of sweat and bleach. You hold back your breath and examine the room. You don’t see much of consequence aside from the wooden floor & bleachers & basketball hoops.@1
-item@class roster@CLASS ROSTER: Adam Jacobs\nBryce Balin\nBecky Barnett\nJered Kropholler\nTanner Laramie\nJessica Nathenson\nRed McGuffin\nJeremy Townsend\nJudy Wrench\nLucy Zastophil@True@True@CLASS ROSTER: Adam Jacobs\nBryce Balin\nBecky Barnett\nJered Kropholler\nTanner Laramie\nJessica Nathenson\nRed McGuffin\nJeremy Townsend\nJudy Wrench\nLucy Zastophil@0
-small_room@Bulletin Board@You see a collage of papers@0
-item@tie-dyed cloth@You notice stuck on the wire is a piece of tie-dyed cloth.@True@True@A piece of tie-died cloth found at the crime scene@2
-small_room@Gerbil's Cage@You walk over to the empty cage and see that the cage door has indeed be left open.@0
-small_room@Teacher's Desk@There is a teacher's desk by the chalkboard@0
-big_room@Class Room 10b@There is an empty classroom with a chalkboard and desks.@1
-item@pet food@You discover some gerbil food inside@False@True@Found some gerbil food in the PETA decorated locker@2
-small_room@lockers@You find only one locker left unlocked. Inside are posters of PETA@0
-big_room@Hallway@The hallway has access to every room but some are locked. The doors you can see lead to The Classroom - The Gym - The Nurses’ Office - The Playground - The Science Lab - The Teachers’ Lounge & The Cafeteria. @1
+small_room|Lunch Table|There is a half eaten slice of pizza on the table|0
+item|allergy list|THE SIGN READS:\nSTUDENT ALLERGIES:\nBryce Balin - Peanuts\nJudy Wrench - Olives\nBecky Barnett - Gerbils|True|True|Beck Barnett is allergic to Gerbils|2
+small_room|cooks' work station|You see a small handwritten sign|0
+big_room|Cafeteria|The smell of today's lunch greets your nostrils: pizza. Your mouth waters but your time is limited.\nYou look around and see that the cafeteria is empty save for a few cooks working tirelessly\nin the background preparing the day's meal. You look for things relevant to your case but don't see much worth mentioning.|1
+
+item|broken beaker|The beaker appears to have been knocked of the table|False|True|Broken beaker glass|0
+small_room|Beakers|beep beep|0
+small_room|Sink|Everything is blue|0
+big_room|Science Lab|You try to quietly open the door to the Science Lab but it creaks open with a groan. You cringe hoping that no one heard, but unfortunately Ms. Frizzle heard your noisy entrance. She welcomes you into the room where you step past rows of blacktop desks, Erlenmeyer flasks, vials, and an assortment of other alarming things.|1
+
+item|secret letter|LETTER READS, Mrs. Crabtree, I must profess my utmost fear for our dear gerbil's life. Red McGuffin is a boy of questionable character and I have seen him antagonize dear Lemiwinks on multiple occasions. If you let him take him home for the weekend, I fear that he may not make it back to school on Monday alive.|True|True|LETTER READS, Mrs. Crabtree, I must profess my utmost fear for our dear gerbil's life. Red McGuffin is a boy of questionable character and I have seen him antagonize dear Lemiwinks on multiple occasions. If you let him take him home for the weekend, I fear that he may not make it back to school on Monday alive.|2
+small_room|table|On the table in front of you is an opened letter.|0
+item|half-eaten cake|disgusting cake|False|True|0
+small_room|countertop|A half-eaten birthday cake rests on the counter in the back and you feel like you spied a mouse nibbling on it before scurrying off.|0
+small_room|Coffee Machine|covfefe lots of covfefe|0
+big_room|Teacher's Lounge|You enter the teacher's lounge with full confidence in your abilities. With your hall pass,\nyou are invincible. You are slightly disappointed that there are no teachers present so\nthat you can prove your abilities. Alas, you get past this and continue on. You look\naround to see run down furniture covered in coffee stains.|1
+
+small_room|jungle gym|On the jungle gym, you see Red McGuffin, the class bully swindling other students out of their lunch money playing blackjack.|0
+big_room|Playground|The door's to the outside world gust open to the warmth of daylight… and freedom.\nYou want to relish in the glory of the sun but you remember your task at hand and look around. You see your\nclassmates enjoying themselves in blissful ignorance (or perhaps knowing guilt) that one of their\nclassmates is guilty of a crime most heinous.|1
+
+item|sick note|NOTE READS\n10:00 AM - Please excuse Tanner Laramie's tardiness today. He was at the dentist's office.|True|True|2
+small_room|Nurses' Desk| A sick note rests unattended on her desk|0
+big_room|Nurses' Office|You enter the Nurse's office to find it vacant. Surrounding you is a sterile environment of gauze,\ndisinfectant, and charts. A lone plastic skeleton stands resolute in the corner.|1
+
+item|jock strap| You discover amongst the rubbage a disgusting jock strap|False|True|digusting jock strap|0
+small_room|bleachers|A set of flithy bleachers from last night's game|0
+big_room|Gym|As you walk into the gym you are immediately hit by the smell of sweat and bleach.\nYou hold back your breath and examine the room. You don't see much of consequence aside\nfrom the wooden floor & bleachers & basketball hoops.|1
+
+item|class roster|CLASS ROSTER: Adam Jacobs\nBryce Balin\nBecky Barnett\nJered Kropholler\nTanner Laramie\nJessica Nathenson\nRed McGuffin\nJeremy Townsend\nJudy Wrench\nLucy Zastophil|True|True|CLASS ROSTER: Adam Jacobs\nBryce Balin\nBecky Barnett\nJered Kropholler\nTanner Laramie\nJessica Nathenson\nRed McGuffin\nJeremy Townsend\nJudy Wrench\nLucy Zastophil|0
+small_room|Bulletin Board|You see a collage of papers|0
+item|tie-dyed cloth|You notice stuck on the wire is a piece of tie-dyed cloth.|True|True|A piece of tie-died cloth found at the crime scene|2
+small_room|Gerbil's Cage|You walk over to the empty cage and see that the cage door has indeed be left open.|0
+small_room|Teacher's Desk|There is a teacher's desk by the chalkboard|0
+big_room|Class Room 10b|There is an empty classroom with a chalkboard and desks.|1
+
+item|pet food|You discover some gerbil food inside|False|True|Found some gerbil food in the PETA decorated locker|2
+small_room|lockers|You find only one locker left unlocked. Inside are posters of PETA|0
+big_room|Hallway|The hallway has access to every room but some are locked. The doors you can see lead to:\nThe Classroom, The Gym, The Nurses' Office, The Playground, The Science Lab, The Teachers' Lounge, & The Cafeteria. |1
