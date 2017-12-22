@@ -6,6 +6,7 @@ class Notebook:
         self.data = []
 
     def write(self, item):
+        print("You inspect {}.\n\nInteresting Find!\n...You examine the item and add the item to your notepad...".format(item))
         self.data.append(item)
 
     def __str__(self):
