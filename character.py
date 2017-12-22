@@ -22,7 +22,6 @@ class NpcEssential(Character):
         self.gameparam = gameparam
 
     def talk(self):
-        
         return self.interactions[self.name]['game_offer']
 
     def conclude(self, outcome):

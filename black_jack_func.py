@@ -1,4 +1,5 @@
-
+import uuid
+import random
 
 def black_jack(player_name):
     class Card:
@@ -28,12 +29,9 @@ def black_jack(player_name):
             return '{}{}'.format(self.rank[0], self.suit[0])
 
 
-    import uuid
-    import random
 
     suits = ['Hearts', 'Spades', 'Diamonds', 'Clubs']
     ranks = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A']
-
 
     class Deck:
         def __init__(self):
@@ -58,8 +56,6 @@ def black_jack(player_name):
         def draw(self):
             return self.cards.pop(0)
 
-
-
         def __repr__(self):
             repr_cards = []
             for c in self.cards:
@@ -71,7 +67,6 @@ def black_jack(player_name):
             for c in self.cards:
                 str_cards.append(str(c))
             return ', '.join(str_cards)
-
 
     class Hand:
         def __init__(self, deck):
@@ -106,7 +101,6 @@ def black_jack(player_name):
         def __str__(self):
             return 'Your hand is: {}.'.format(', '.join(str(c) for c in self.hand))
 
-
     def dealer(dealer_hand):
         while True:
             score = dealer_hand.score()
@@ -123,14 +117,12 @@ def black_jack(player_name):
                 dealer_hand.add_card()
                 continue
 
-
     def new_game(players=1, d=Deck()):
         d.shuffle()
         d.cut()
         d_hand = Hand(d)
         p_hands = [Hand(d) for x in range(players)]
         return d, d_hand, p_hands
-
 
     def evaluate_hand(h):
         print(h)
@@ -143,7 +135,6 @@ def black_jack(player_name):
             return 'blackjack'
         else:
             return act(h)
-
 
     def act(h):
         choice = input(
@@ -205,4 +196,7 @@ def black_jack(player_name):
 
 
     return game()
+<<<<<<< HEAD
 
+=======
+>>>>>>> master

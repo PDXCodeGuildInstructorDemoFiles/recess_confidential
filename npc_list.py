@@ -1,6 +1,7 @@
 import character
 import trivia
 import black_jack_func
+# import tictac
 
 interactions_essential = {
         'Jeremy': {
@@ -38,7 +39,8 @@ jeremy = character.NpcEssential(
     'Jeremy', 
     'Tic-Tac-Toe Student', 
     interactions_essential, 
-    mini_game = None, 
+    # mini_game = tictac.TicTacToe,
+    # gameparam = 'player'
     )
 
 red_mcguffin = character.NpcEssential(

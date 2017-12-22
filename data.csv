@@ -9,6 +9,7 @@ small_room,The Chair,Someone has recently been killed here.,0
 big_room,Nurse's Office,This is a clean room full of bandaids and tums,1
 item,broken beaker,The beaker appears to have been knocked of the table ,False,True,Broken beaker glass,0
 small_room,Beakers,beep beep,0
+item,gerbil eraser,A used gerbil eraser is resting by the sink,False,True,it seems useless,2
 small_room,Sink,Everything is blue,0
 big_room,Science Lab,A good place for Blue Sky and some hard candy.,1
 small_room,Coffee Machine,covfefe lots of covfefe,0
