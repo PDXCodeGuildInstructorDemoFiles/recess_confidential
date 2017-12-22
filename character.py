@@ -21,7 +21,6 @@ class NpcEssential(Character):
         self.mini_game = mini_game
         self.gameparam = gameparam
         self.games_played = 0
-        self.reward_value = 5
 
     def talk(self):
         return self.interactions[self.name]['game_offer']
@@ -32,8 +31,18 @@ class NpcEssential(Character):
         else:
             print("Better luck next time!")
 
+    def set_reward_value(self):
+        for x in self.inventory:
+            if self.games_played == 0:
+                x.points = 5
+            elif self.games_played == 1:
+                x.points = 3
+            else:
+                x.points = 2
+
     def give(self):
         return self.inventory.pop()
+
 
 
 class NpcNonEssential(Character):
