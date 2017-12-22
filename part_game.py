@@ -1,6 +1,7 @@
 # modules
 from noir_items import Item
 from noir_rooms import Room
+from notebook import Notebook
 import character
 import trivia
 from notebook import Notebook
@@ -143,7 +144,7 @@ def navigation():
             back_to_room = charlocation
             if find_class(charlocation.inventory[user]) == "Item":
                 print("Item was chosen")
-                p_note.write(charlocation.inventory[user])
+                # p_note.write(charlocation.inventory[user])
             elif find_class(charlocation.inventory[user]) == "NpcEssential":
                 print("NPC was chosen")
                 print("<Insert NPC code commands here>")
@@ -182,11 +183,13 @@ def menu():
 if __name__ == '__main__':
     game = True
 
+    player = character.Player("TBD","description")
+
     interactions_essential = {
         'Jeremy': {
             'game_offer': 'PLAYER: Hey, Jeremy. Do you know who stole the gerbil?\nJEREMY: I do! I will tell you if you beat me at Tic-Tac-Toe.\n\tWould you like to play Tic-Tac-Toe?(y/n): ',
             'conclusion': 'JEREMY: Congratulations! I saw Lucy open the cage but I don\'t know why.'},
-        'Mrs. Frizzle': {
+        'Ms. Frizzle': {
             'game_offer': 'PLAYER: Hello Mrs. Frizzle. Could I have a hall pass?\nMRS. FRIZZLE: Sure. I will write you one if you pass this quiz I wrote.\nWould you like to try it out?(y/n): ',
             'conclusion': 'Congratulations! Here\'s your hall pass.'},
         'Red McGuffin': {
@@ -208,7 +211,7 @@ if __name__ == '__main__':
     ms_frizzle = character.NpcEssential(
         'Ms. Frizzle',
         'Middle aged science teacher',
-        interactions_essential["Mrs. Frizzle"],
+        interactions_essential,
         mini_game="science",
         inventory=[]
     )
