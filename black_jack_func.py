@@ -206,7 +206,3 @@ def black_jack(player_name):
 
     return game()
 
-
-
-reward = black_jack("Jeremy")
-print(reward)
