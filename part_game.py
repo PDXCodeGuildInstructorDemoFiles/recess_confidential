@@ -135,7 +135,7 @@ def navigation():
         user = input("What would you like to do?: ")
 
         if user == 'r':
-            charlocation = back_to_room
+            charlocation = hallway[-1]
             navigation()
         elif user == 'm':
             menu()
@@ -246,6 +246,7 @@ if __name__ == '__main__':
 
     hallway[2].connects_to[0].inventory.append(npc_list.ms_frizzle)
     hallway[0].connects_to[0].inventory.append(npc_list.red_mcguffin)
+    hallway[4].connects_to[0].inventory.append(npc_list.ned_beasley)
 
     # runs game
     while game == True:

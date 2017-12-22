@@ -11,7 +11,10 @@ interactions_essential = {
             'conclusion': 'Congratulations! Here\'s your hall pass.'},
         'Red McGuffin': {
             'game_offer': 'PLAYER: Hi Red, you\'re on the Gerbil Crew right? Do you know who else access to the gerbil cage?\nRED McGUFFIN: Yup. But I\'ll only tell you if you beat me at blackjack. Wanna play?(y/n): ',
-            'conclusion': 'That was a good hand. Here\'s a list of the rest of the people on the crew. They all have keys to the cage.'}
+            'conclusion': 'That was a good hand. Here\'s a list of the rest of the people on the crew. They all have keys to the cage.'},
+        'Ned Beasley': {
+            'game_offer': 'PLAYER: Hey Ned, I need some information about a missing classroom pet. Have you seen anything that might help? NED BEASLEY: Hmmm... Yeah I do think I did see something this morning. How about you answer some questions I\'ve got and if you answer most of them I\'ll help you out?? (y/n): ',
+            'conclusion': 'Nice, dude! So look, this morning I did someone lurking around the classroom before 8:30. Looked like a girl but I couldn\'t really tell. That\'s all I got'}
     }
 
 
@@ -23,7 +26,7 @@ ms_frizzle = character.NpcEssential(
     gameparam = 'science',
     )
 
-comic_kid = character.NpcEssential(
+ned_beasley = character.NpcEssential(
     'Ned Beasley', 
     'Resident comic-book expert', 
     interactions_essential, 
