@@ -45,7 +45,7 @@ jeremy = character.NpcEssential(
     'Jeremy',
     'Tic-Tac-Toe Student',
     interactions_essential,
-    mini_game = None,
+    mini_game = "tic_tac2.TicTacToe",
     )
 
 red_mcguffin = character.NpcEssential(
