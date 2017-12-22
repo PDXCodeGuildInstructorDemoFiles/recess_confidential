@@ -14,12 +14,14 @@ class Character:
 
 
 class NpcEssential(Character):
-    def __init__(self, name, description, interactions, mini_game=None, genre=None):
+    def __init__(self, name, description, interactions, mini_game=None, gameparam=None):
         Character.__init__(self, name, description)
         self.interactions = interactions
         self.inventory = []
         self.mini_game = mini_game
-        self.genre = genre
+        self.gameparam = gameparam
+        self.games_played = 0
+        self.reward_value = 5
 
     def talk(self):
         return self.interactions[self.name]['game_offer']
@@ -47,7 +49,7 @@ class Player(Character):
     def __init__(self, name, description):
         Character.__init__(self, name, description)
         self.notebook = Notebook()
-        self.keycard = self.check_keycard()
+        self.hall_pass = self.check_hall_pass()
         self.current_loc = None
         self.prev_loc = None
 
@@ -60,9 +62,9 @@ class Player(Character):
     def log_clue(self, clue):
         self.notebook.write(clue)
 
-    def check_keycard(self):
+    def check_hall_pass(self):
         for x in self.notebook.data:
-            if x.name == 'keycard':
+            if x.name == 'hall pass':
                 return True
             return False
 
