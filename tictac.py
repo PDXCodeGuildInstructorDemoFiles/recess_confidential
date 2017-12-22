@@ -22,8 +22,6 @@ def TicTacToe(player_name):
         while not (letter == 'X' or letter == 'O'):
             print('Do you want to be X or O?')
             letter = input().upper()
-
-clear
         if letter == 'X':
             return ['X', 'O']
         else:
