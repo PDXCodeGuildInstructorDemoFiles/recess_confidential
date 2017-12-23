@@ -59,7 +59,7 @@ class Player(Character):
         self.notebook = Notebook()
         self.hall_pass = self.check_hall_pass()
         self.current_loc = None
-        self.prev_loc = None
+        self.prev_loc = []
 
     def move(self, current_room, new_room):
         current_room.inventory.remove(self)
